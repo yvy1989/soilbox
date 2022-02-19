@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
     public Canvas menuCanvas;
 
     public bool isMenuActive = false;
+
 
     private void Awake()
     {
@@ -38,29 +40,23 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         menuCanvas.enabled = isMenuActive;
-        /*
-        if (Input.GetMouseButtonDown(0))
+        
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()) //verifica se clicou com o mouse e nao esta em cima de um GameObject
         {
-            
+
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit,200f, layermask_solo))
+            if (Physics.Raycast(ray, out hit, 400f, layermask_solo))
             {
                 if (hit.transform.CompareTag("soil"))
                 {
                     isMenuActive = !isMenuActive;
+
                 }
+
             }
 
-            if (Physics.Raycast(ray, out hit, 200f, layermask_UI))
-            {
-                if (hit.transform.CompareTag("soil"))
-                {
-                    Debug.Log("UI");
-                }
-            }
-
-        }*/
+        }
     }
 
     
