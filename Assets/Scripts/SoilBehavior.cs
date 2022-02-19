@@ -6,7 +6,8 @@ using UnityEngine.UIElements;
 
 public class SoilBehavior : MonoBehaviour
 {
-    
+    private bool isSelected = false; //verifica o solo q esta ativo e vai ficar vermelho
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,20 +17,33 @@ public class SoilBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    private void OnMouseEnter()
+    private void OnMouseOver()
     {
-        GetComponent<MeshRenderer>().enabled = true;
+        if (!isSelected && !GameManager.Instance.isMenuActive)
+        {
+            GetComponent<MeshRenderer>().enabled = true;
+        }
+
         //Debug.Log("passou");
     }
     private void OnMouseExit()
     {
-        GetComponent<MeshRenderer>().enabled = false;
+        if (!isSelected && !GameManager.Instance.isMenuActive)
+        {
+            GetComponent<MeshRenderer>().enabled = false;
+        }
+        
         //Debug.Log("saiu");
     }
 
+    private void OnMouseDown()
+    {
 
+
+
+    }
 
 }

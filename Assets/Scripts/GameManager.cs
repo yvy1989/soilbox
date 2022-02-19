@@ -2,19 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public LayerMask layermask_solo;
-    public LayerMask layermask_UI;
+    RaycastHit TempHit;
 
     public static GameManager Instance;
     // Start is called before the first frame update
     public GameObject menu;
 
     public Canvas menuCanvas;
+    public Dropdown menuCascata;
 
-    public bool isMenuActive = false;
+    public bool isMenuActive = false; //esconder o canvas
+
 
 
     private void Awake()
@@ -41,22 +43,41 @@ public class GameManager : MonoBehaviour
     {
         menuCanvas.enabled = isMenuActive;
         
-        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()) //verifica se clicou com o mouse e nao esta em cima de um GameObject
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject() && !isMenuActive) //verifica se clicou com o mouse e nao esta em cima de um GameObject
         {
 
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, 400f, layermask_solo))
+
+
+            ////posicao menu
+            var screenPoint = Input.mousePosition;
+            screenPoint.z = 10.0f; //distance of the plane from the camera
+            menuCascata.GetComponent<RectTransform>().position = screenPoint;
+            /////
+
+
+
+            if (Physics.Raycast(ray, out hit))
             {
                 if (hit.transform.CompareTag("soil"))
                 {
-                    isMenuActive = !isMenuActive;
+                    isMenuActive = true;
+                    hit.transform.GetComponent<MeshRenderer>().enabled = true;
+                    TempHit = hit;
+                    /// TODO solo
 
                 }
 
             }
 
         }
+    }
+
+    public void cancelSelectionOperation()
+    {
+        isMenuActive = false;
+        TempHit.transform.GetComponent<MeshRenderer>().enabled = false;
     }
 
     
