@@ -6,6 +6,8 @@ using UnityEngine.UIElements;
 
 public class SoilBehavior : MonoBehaviour
 {
+    public int TerrenoId;
+
     private bool isSelected = false; //verifica o solo q esta ativo e vai ficar vermelho
 
     // Start is called before the first frame update
@@ -39,11 +41,5 @@ public class SoilBehavior : MonoBehaviour
         //Debug.Log("saiu");
     }
 
-    private void OnMouseDown()
-    {
-
-
-
-    }
 
 }

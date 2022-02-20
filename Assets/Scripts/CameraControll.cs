@@ -32,9 +32,12 @@ public class CameraControll : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.Instance.isMenuActive)
+        {
+            MoveCam();
+            zoomScroll();
+        }
 
-        MoveCam();
-        zoomScroll();
 
     }
 

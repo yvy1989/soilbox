@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
 
-            ////posicao menu
+            ////posicao menu de acordo com o clique do mouse
             var screenPoint = Input.mousePosition;
             screenPoint.z = 10.0f; //distance of the plane from the camera
             menuCascata.GetComponent<RectTransform>().position = screenPoint;
