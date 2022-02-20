@@ -10,6 +10,10 @@ public class SoilBehavior : MonoBehaviour
 
     private bool isSelected = false; //verifica o solo q esta ativo e vai ficar vermelho
 
+    public float price;
+
+    public string description;
+
     // Start is called before the first frame update
     void Start()
     {

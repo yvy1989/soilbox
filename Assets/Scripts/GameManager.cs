@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     public Canvas menuCanvas;
     public Dropdown menuCascata;
     public Text Soil_ID;
-    
+
     ///////////////////////////////////////////////////////////
 
 
@@ -47,6 +47,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         status = GameStatus.selectTerrain;
+
+
+
     }
 
     // Update is called once per frame
@@ -55,6 +58,7 @@ public class GameManager : MonoBehaviour
         menuCanvas.enabled = isMenuActive;
 
         Clique();
+
     }
 
     private void Clique()
@@ -116,4 +120,5 @@ public class GameManager : MonoBehaviour
     {
 
     }
+
 }
