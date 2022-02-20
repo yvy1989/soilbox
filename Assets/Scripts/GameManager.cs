@@ -9,17 +9,18 @@ public class GameManager : MonoBehaviour
 {
     public enum GameStatus
     {
-        selectTerrain,ManageTerrain,GameOver,Win
+        selectTerrain, ManageTerrain, GameOver, Win
     }
 
     public GameStatus status;
 
+    public GameObject[] myTerrains;
 
     RaycastHit TempHit;
 
     public static GameManager Instance;
     // Start is called before the first frame update
-    
+
 
     public bool isMenuActive = false; //esconder o canvas
 
@@ -29,6 +30,8 @@ public class GameManager : MonoBehaviour
     public GameObject MainMenu;
 
     public GameObject ConfirmationMenu;
+
+    SoilBehavior soil;
 
     public Text Soil_ID;
 
@@ -95,7 +98,7 @@ public class GameManager : MonoBehaviour
                     hit.transform.GetComponent<MeshRenderer>().enabled = true;
                     TempHit = hit;// para ser usado em cancelOperation
 
-                    SoilBehavior soil = hit.collider.gameObject.GetComponent<SoilBehavior>(); //pega o objeto Soil via raycast
+                    soil = hit.collider.gameObject.GetComponent<SoilBehavior>(); //pega o objeto Soil via raycast
 
                     if (soil != null) Soil_ID.text = soil.TerrenoId.ToString();// atribui a UI o valor do texto///////////////////////////////////////////////UI
 
@@ -114,20 +117,41 @@ public class GameManager : MonoBehaviour
     }
 
 
-
     public void BuyTerrain(int _option)
     {
         MainMenuOption = _option;
+        ConfirmationMenu.SetActive(true);
     }
 
     public void SellTerrain(int _option)
     {
         MainMenuOption = _option;
+        ConfirmationMenu.SetActive(true);
     }
 
     public void ManageTerrain(int _option)
     {
+        //////verificar se o id_terreno pertence ao player
+        if (myTerrains != null)
+        {
+            foreach (var terrain in myTerrains)
+            {
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            }
+        }
         MainMenuOption = _option;
+    }
+
+    ///////////////////////////////////////////
+    public void ConfirmOperation()
+    {
+        ConfirmationMenu.SetActive(false);
+        //verificar se tem grana
+    }
+
+    public void NotConfirmOperation()
+    {
+        ConfirmationMenu.SetActive(false);
     }
 
 }

@@ -1684,7 +1684,7 @@ GameObject:
   - component: {fileID: 681858861}
   - component: {fileID: 681858860}
   m_Layer: 0
-  m_Name: MyTerrain
+  m_Name: soil-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3503,6 +3503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   status: 0
+  myTerrains: []
   isMenuActive: 0
   menuCanvas: {fileID: 1984551537}
   MainMenu: {fileID: 75688664}
@@ -5252,7 +5253,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2010314055}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1380061091}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: NotConfirmOperation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2010314055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5301,7 +5314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2049866879}
   m_Layer: 0
-  m_Name: soil
+  m_Name: terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5641,7 +5654,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2097200185}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1380061091}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ConfirmOperation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2097200185
 MonoBehaviour:
   m_ObjectHideFlags: 0

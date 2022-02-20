@@ -14,6 +14,8 @@ public class SoilBehavior : MonoBehaviour
 
     public string description;
 
+   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,19 +30,28 @@ public class SoilBehavior : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (!isSelected && !GameManager.Instance.isMenuActive)
+        if (GameManager.Instance.status == GameManager.GameStatus.selectTerrain)//verifica se esta escolhendo o terreno
         {
-            GetComponent<MeshRenderer>().enabled = true;
+            if (!isSelected && !GameManager.Instance.isMenuActive)
+            {
+                GetComponent<MeshRenderer>().enabled = true;
+            }
         }
+ 
 
         //Debug.Log("passou");
     }
     private void OnMouseExit()
     {
-        if (!isSelected && !GameManager.Instance.isMenuActive)
+        if (GameManager.Instance.status == GameManager.GameStatus.selectTerrain)//verifica se esta escolhendo o terreno
         {
-            GetComponent<MeshRenderer>().enabled = false;
+            if (!isSelected && !GameManager.Instance.isMenuActive)
+            {
+                GetComponent<MeshRenderer>().enabled = false;
+            }
         }
+
+
         
         //Debug.Log("saiu");
     }
