@@ -6,17 +6,28 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public enum GameStatus
+    {
+        selectTerrain,ManageTerrain,GameOver,Win
+    }
+
+    public GameStatus status;
+
+
     RaycastHit TempHit;
 
     public static GameManager Instance;
     // Start is called before the first frame update
     public GameObject menu;
 
-    public Canvas menuCanvas;
-    public Dropdown menuCascata;
-
     public bool isMenuActive = false; //esconder o canvas
 
+    ////////////////////////////////////VAI VIRAR UI manager
+    public Canvas menuCanvas;
+    public Dropdown menuCascata;
+    public Text Soil_ID;
+    
+    ///////////////////////////////////////////////////////////
 
 
     private void Awake()
@@ -35,14 +46,19 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        
+        status = GameStatus.selectTerrain;
     }
 
     // Update is called once per frame
     void Update()
     {
         menuCanvas.enabled = isMenuActive;
-        
+
+        Clique();
+    }
+
+    private void Clique()
+    {
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject() && !isMenuActive) //verifica se clicou com o mouse e nao esta em cima de um GameObject
         {
 
@@ -64,8 +80,12 @@ public class GameManager : MonoBehaviour
                 {
                     isMenuActive = true;
                     hit.transform.GetComponent<MeshRenderer>().enabled = true;
-                    TempHit = hit;
-                    /// TODO solo
+                    TempHit = hit;// para ser usado em cancelOperation
+
+                    SoilBehavior soil = hit.collider.gameObject.GetComponent<SoilBehavior>(); //pega o objeto Soil via raycast
+
+                    if (soil != null) Soil_ID.text = soil.TerrenoId.ToString();// atribui a UI o valor do texto///////////////////////////////////////////////UI
+
 
                 }
 
@@ -74,11 +94,26 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void cancelSelectionOperation()
+    public void cancelSelectionOperation()//////////////////////////////////////////////////////////////////////////////////////////////////////////////////UI
     {
         isMenuActive = false;
         TempHit.transform.GetComponent<MeshRenderer>().enabled = false;
     }
 
-    
+
+
+    public void BuyTerrain()
+    {
+
+    }
+
+    public void SellTerrain()
+    {
+
+    }
+
+    public void ManageTerrain()
+    {
+
+    }
 }
