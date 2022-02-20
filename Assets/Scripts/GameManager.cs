@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
 
     ///////////////////////////////////////////////////////////
 
+    int MainMenuOption;
+
 
     private void Awake()
     {
@@ -63,6 +65,8 @@ public class GameManager : MonoBehaviour
         menuCanvas.enabled = isMenuActive;
 
         Clique();
+
+        Debug.Log(MainMenuOption);
 
     }
 
@@ -111,19 +115,19 @@ public class GameManager : MonoBehaviour
 
 
 
-    public void BuyTerrain()
+    public void BuyTerrain(int _option)
     {
-
+        MainMenuOption = _option;
     }
 
-    public void SellTerrain()
+    public void SellTerrain(int _option)
     {
-
+        MainMenuOption = _option;
     }
 
-    public void ManageTerrain()
+    public void ManageTerrain(int _option)
     {
-
+        MainMenuOption = _option;
     }
 
 }
