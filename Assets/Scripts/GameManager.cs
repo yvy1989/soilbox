@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,13 +19,17 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
     // Start is called before the first frame update
-    public GameObject menu;
+    
 
     public bool isMenuActive = false; //esconder o canvas
 
     ////////////////////////////////////VAI VIRAR UI manager
     public Canvas menuCanvas;
-    public Dropdown menuCascata;
+
+    public GameObject MainMenu;
+
+    public GameObject ConfirmationMenu;
+
     public Text Soil_ID;
 
     ///////////////////////////////////////////////////////////
@@ -47,7 +52,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         status = GameStatus.selectTerrain;
-
+        ConfirmationMenu.SetActive(false);
 
 
     }
@@ -73,7 +78,7 @@ public class GameManager : MonoBehaviour
             ////posicao menu de acordo com o clique do mouse
             var screenPoint = Input.mousePosition;
             screenPoint.z = 10.0f; //distance of the plane from the camera
-            menuCascata.GetComponent<RectTransform>().position = screenPoint;
+            MainMenu.GetComponent<RectTransform>().position = screenPoint;
             /////
 
 
