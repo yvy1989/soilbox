@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -7,6 +8,8 @@ using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
+    public event Action<int> OnManageSoilwhithId;
+
     public enum GameStatus
     {
         selectTerrain, ManageTerrain, GameOver, Win
@@ -149,14 +152,26 @@ public class GameManager : MonoBehaviour
     }
 
     ///////////////////////////////////////////
-    public void ConfirmOperation()
+    public void ConfirmOperation()// Compra e Venda
     {      
-        if (MainMenuOption == 1) {//verificar se tem grana
+        if (MainMenuOption == 1) {//verificar se tem grana e se esta disponivel
+            if (soil.isAvaiable)
+            {
+                myTerrains.Add(TempTerrain);
+                TempTerrain = null;
+                //evento para mudar o valor de disponibilidade depois da compra
+                if (OnManageSoilwhithId != null) //// CHAMDA DO ENVENTO
+                    OnManageSoilwhithId(soil.TerrenoId);//passa como parametro o id para soilBehavior
 
-            myTerrains.Add(TempTerrain);
-            TempTerrain = null;
+            }
+            else
+            {
+                Debug.Log("Terreno indisponivel para compra");
+            }
+            
+            
         }
-        if (MainMenuOption == 2)
+        if (MainMenuOption == 2)// venda
         {
 
             //remover e adicionar grana
@@ -164,6 +179,7 @@ public class GameManager : MonoBehaviour
         }
 
         ConfirmationMenu.SetActive(false);
+        cancelSelectionOperation();// desabilita main menu
     }
 
     public void NotConfirmOperation()

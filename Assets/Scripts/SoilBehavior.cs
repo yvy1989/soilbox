@@ -14,12 +14,14 @@ public class SoilBehavior : MonoBehaviour
 
     public string description;
 
+    public bool isAvaiable = true; // variavel q define se o terreno pode ser comprado
+
    
 
     // Start is called before the first frame update
     void Start()
     {
-      
+        GameManager.Instance.OnManageSoilwhithId += changeAvaiablility;
     }
 
     // Update is called once per frame
@@ -56,5 +58,13 @@ public class SoilBehavior : MonoBehaviour
         //Debug.Log("saiu");
     }
 
+
+    void changeAvaiablility(int id)// funcao q vair ser usada no evento e recebe o valor como parametro do game manager
+    {
+        if (id == TerrenoId)
+        {
+            isAvaiable = false;
+        }
+    }
 
 }
