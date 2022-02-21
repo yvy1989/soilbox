@@ -28,12 +28,16 @@ public class GameManager : MonoBehaviour
 
     public bool isMenuActive = false; //esconder o canvas
 
-    ////////////////////////////////////VAI VIRAR UI manager
+    ////////////////////////////////////VAI VIRAR UI manager////////////////////////////
     public Canvas menuCanvas;
 
     public GameObject MainMenu;
 
     public GameObject ConfirmationMenu;
+
+    public GameObject InfoMenu;
+    public Text InfoText;
+
 
     SoilBehavior soil;
 
@@ -41,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     public Text OperationTxt;
 
-    ///////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////
 
     int MainMenuOption;
 
@@ -64,6 +68,8 @@ public class GameManager : MonoBehaviour
     {
         status = GameStatus.selectTerrain;
         ConfirmationMenu.SetActive(false);
+        InfoMenu.SetActive(false);
+
 
 
     }
@@ -81,6 +87,7 @@ public class GameManager : MonoBehaviour
 
     private void Clique()
     {
+        
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject() && !isMenuActive) //verifica se clicou com o mouse e nao esta em cima de um GameObject
         {
 
@@ -94,7 +101,7 @@ public class GameManager : MonoBehaviour
             MainMenu.GetComponent<RectTransform>().position = screenPoint;
             /////
 
-
+            InfoMenu.SetActive(false);/// desabilita infoBox
 
             if (Physics.Raycast(ray, out hit))
             {
@@ -120,6 +127,7 @@ public class GameManager : MonoBehaviour
     public void cancelSelectionOperation()//////////////////////////////////////////////////////////////////////////////////////////////////////////////////UI
     {
         isMenuActive = false;
+
         TempHit.transform.GetComponent<MeshRenderer>().enabled = false;
     }
 
@@ -140,20 +148,13 @@ public class GameManager : MonoBehaviour
 
     public void ManageTerrain(int _option)
     {
-        //////verificar se o id_terreno pertence ao player
-        if (myTerrains != null)
-        {
-            foreach (var terrain in myTerrains)
-            {
-                /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            }
-        }
-        MainMenuOption = _option;
+        // testar
+        MainMenuOption = _option;///verificar se usa
     }
 
     ///////////////////////////////////////////
     public void ConfirmOperation()// Compra e Venda
-    {      
+    {
         if (MainMenuOption == 1) {//verificar se tem grana e se esta disponivel
             if (soil.isAvaiable)
             {
@@ -166,10 +167,13 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("Terreno indisponivel para compra");
+                ShowInfo("Terreno indisponivel");
+                Debug.Log("Indisponivel");
+                return;
+
             }
-            
-            
+
+
         }
         if (MainMenuOption == 2)// venda
         {
@@ -180,6 +184,15 @@ public class GameManager : MonoBehaviour
 
         ConfirmationMenu.SetActive(false);
         cancelSelectionOperation();// desabilita main menu
+    }
+
+    private void ShowInfo(string _info)
+    {
+        InfoMenu.SetActive(true);
+        InfoText.text = _info;
+        isMenuActive = true;
+        
+        
     }
 
     public void NotConfirmOperation()
