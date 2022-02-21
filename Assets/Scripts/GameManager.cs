@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
 
     public GameStatus status;
 
-    public GameObject[] myTerrains;
+    public List<GameObject> myTerrains;
+    public GameObject TempTerrain;
 
     RaycastHit TempHit;
 
@@ -34,6 +35,8 @@ public class GameManager : MonoBehaviour
     SoilBehavior soil;
 
     public Text Soil_ID;
+
+    public Text OperationTxt;
 
     ///////////////////////////////////////////////////////////
 
@@ -102,6 +105,7 @@ public class GameManager : MonoBehaviour
 
                     if (soil != null) Soil_ID.text = soil.TerrenoId.ToString();// atribui a UI o valor do texto///////////////////////////////////////////////UI
 
+                    TempTerrain = hit.collider.gameObject;
 
                 }
 
@@ -119,6 +123,7 @@ public class GameManager : MonoBehaviour
 
     public void BuyTerrain(int _option)
     {
+        OperationTxt.text = "compra";
         MainMenuOption = _option;
         ConfirmationMenu.SetActive(true);
     }
@@ -127,6 +132,7 @@ public class GameManager : MonoBehaviour
     {
         MainMenuOption = _option;
         ConfirmationMenu.SetActive(true);
+        OperationTxt.text = "venda";
     }
 
     public void ManageTerrain(int _option)
@@ -144,9 +150,20 @@ public class GameManager : MonoBehaviour
 
     ///////////////////////////////////////////
     public void ConfirmOperation()
-    {
+    {      
+        if (MainMenuOption == 1) {//verificar se tem grana
+
+            myTerrains.Add(TempTerrain);
+            TempTerrain = null;
+        }
+        if (MainMenuOption == 2)
+        {
+
+            //remover e adicionar grana
+            
+        }
+
         ConfirmationMenu.SetActive(false);
-        //verificar se tem grana
     }
 
     public void NotConfirmOperation()
