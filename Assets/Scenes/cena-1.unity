@@ -927,7 +927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tamanhoBorda: 25
-  velocidade: 10
+  velocidade: 2
   limiteHorizontalEsquerdo: -7
   limiteHorizontalDireito: 2.76
   limiteVerticalSuperior: -2.5
