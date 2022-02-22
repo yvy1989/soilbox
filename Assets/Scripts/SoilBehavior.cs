@@ -10,7 +10,7 @@ public class SoilBehavior : MonoBehaviour
 
     private bool isSelected = false; //verifica o solo q esta ativo e vai ficar vermelho
 
-    public float price;
+    public int price;
 
     public string description;
 
@@ -59,11 +59,11 @@ public class SoilBehavior : MonoBehaviour
     }
 
 
-    void changeAvaiablility(int id)// funcao q vair ser usada no evento e recebe o valor como parametro do game manager
+    void changeAvaiablility(int id,bool availability)// funcao q vair ser usada no evento e recebe o valor como parametro do game manager
     {
         if (id == TerrenoId)
         {
-            isAvaiable = false;
+            isAvaiable = availability;
         }
     }
 

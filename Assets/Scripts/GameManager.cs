@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
-    public event Action<int> OnManageSoilwhithId;
+    public event Action<int,bool> OnManageSoilwhithId;
 
     public enum GameStatus
     {
@@ -173,31 +173,61 @@ public class GameManager : MonoBehaviour
     ///////////////////////////////////////////
     public void ConfirmOperation()// Compra e Venda
     {
-        if (MainMenuOption == 1) {//verificar se tem grana e se esta disponivel
-            if (soil.isAvaiable)
+
+
+        if (MainMenuOption == 1) {//COMPRA    verificar se tem grana e se esta disponivel
+            if (soil.isAvaiable && currentMoney>=soil.price)
             {
                 myTerrains.Add(TempTerrain);
                 TempTerrain = null;
                 //evento para mudar o valor de disponibilidade depois da compra
                 if (OnManageSoilwhithId != null) //// CHAMDA DO ENVENTO
-                    OnManageSoilwhithId(soil.TerrenoId);//passa como parametro o id para soilBehavior
+                    OnManageSoilwhithId(soil.TerrenoId,false);//passa como parametro o id para soilBehavior para deixar indisponivel
 
+                currentMoney -= soil.price;//retira o valor do terreno do current money
             }
             else
             {
-                ShowInfo("Terreno indisponivel");
-                Debug.Log("Indisponivel");
+                if(currentMoney < soil.price)
+                {
+                    ShowInfo("Voce nao tem dinheiro");
+                }
+                else
+                {
+                    ShowInfo("Terreno indisponivel");
+                }
+                
+                //Debug.Log("Indisponivel");
                 return;
 
             }
 
 
         }
-        if (MainMenuOption == 2)// venda
+        if (MainMenuOption == 2)// venda ////BUG DE VENDA 2X ***************************************************************************
         {
+            foreach (var item in myTerrains)
+            {
+                SoilBehavior tempSoil = item.GetComponent<SoilBehavior>();
+                if (tempSoil != null)
+                {
+                    if(tempSoil.TerrenoId == soil.TerrenoId && !soil.isAvaiable)
+                    {
+                        Debug.Log("Vendeu");
+                        currentMoney += soil.price;
+                        //evento para mudar o valor de disponibilidade depois da venda
+                        if (OnManageSoilwhithId != null) //// CHAMDA DO ENVENTO
+                            OnManageSoilwhithId(soil.TerrenoId, true);//passa como parametro o id para soilBehavior para deixar disponivel
 
-            //remover e adicionar grana
-            
+                        ShowInfo("Venda Realizada com sucesso!!");
+                    }
+
+                    return;
+                }
+                
+            }
+            ShowInfo("Esse terreno nao e seu!!");
+            return;
         }
 
         ConfirmationMenu.SetActive(false);
@@ -209,8 +239,7 @@ public class GameManager : MonoBehaviour
         InfoMenu.SetActive(true);
         InfoText.text = _info;
         isMenuActive = true;
-        
-        
+      
     }
 
     public void NotConfirmOperation()
