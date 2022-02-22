@@ -28,6 +28,12 @@ public class GameManager : MonoBehaviour
 
     public bool isMenuActive = false; //esconder o canvas
 
+    public int startMoney;
+    public int currentMoney;
+
+    public int startCarbon;
+    public int currentCarbon;
+
     ////////////////////////////////////VAI VIRAR UI manager////////////////////////////
     public Canvas menuCanvas;
 
@@ -44,6 +50,9 @@ public class GameManager : MonoBehaviour
     public Text Soil_ID;
 
     public Text OperationTxt;
+
+    public Text MoneyTxt;
+    public Text CarbonTxt;
 
     ///////////////////////////////////////////////////////////////////////////////////
 
@@ -66,6 +75,9 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+        currentMoney = startMoney;
+        currentCarbon = startCarbon;
+
         status = GameStatus.selectTerrain;
         ConfirmationMenu.SetActive(false);
         InfoMenu.SetActive(false);
@@ -82,7 +94,13 @@ public class GameManager : MonoBehaviour
         Clique();
 
         Debug.Log(MainMenuOption);
+        UpdateCreditsValues();
+    }
 
+    private void UpdateCreditsValues()
+    {
+        CarbonTxt.text = currentCarbon.ToString();
+        MoneyTxt.text = currentMoney.ToString();
     }
 
     private void Clique()

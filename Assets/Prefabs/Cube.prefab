@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d3095ef3191287440a1627287b2ca06c, type: 2}
+  - {fileID: 2100000, guid: 40fca5a2d8bb0d941a3201817258c813, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,3 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec9c2737daa84147b08d13ad6989f99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TerrenoId: 0
+  price: 0
+  description: 
+  isAvaiable: 1
