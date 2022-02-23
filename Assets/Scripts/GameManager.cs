@@ -159,9 +159,10 @@ public class GameManager : MonoBehaviour
 
     public void SellTerrain(int _option)
     {
+        OperationTxt.text = "venda";
         MainMenuOption = _option;
         ConfirmationMenu.SetActive(true);
-        OperationTxt.text = "venda";
+       
     }
 
     public void ManageTerrain(int _option)
@@ -185,6 +186,9 @@ public class GameManager : MonoBehaviour
                     OnManageSoilwhithId(soil.TerrenoId,false);//passa como parametro o id para soilBehavior para deixar indisponivel
 
                 currentMoney -= soil.price;//retira o valor do terreno do current money
+
+                ConfirmationMenu.SetActive(false);
+                cancelSelectionOperation();// desabilita main menu
             }
             else
             {
@@ -220,18 +224,21 @@ public class GameManager : MonoBehaviour
                             OnManageSoilwhithId(soil.TerrenoId, true);//passa como parametro o id para soilBehavior para deixar disponivel
 
                         ShowInfo("Venda Realizada com sucesso!!");
+
+                        ConfirmationMenu.SetActive(false);
+                        cancelSelectionOperation();// desabilita main menu
+                        return;
                     }
 
-                    return;
+                    
                 }
                 
             }
-            ShowInfo("Esse terreno nao e seu!!");
+            ShowInfo("Esse terreno nao e seu!!"); //varreu toda a lista e nao encontrou
             return;
         }
 
-        ConfirmationMenu.SetActive(false);
-        cancelSelectionOperation();// desabilita main menu
+
     }
 
     private void ShowInfo(string _info)
