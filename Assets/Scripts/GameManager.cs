@@ -238,7 +238,6 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-
     }
 
     private void ShowInfo(string _info)
