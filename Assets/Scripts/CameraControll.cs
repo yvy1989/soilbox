@@ -76,7 +76,7 @@ public class CameraControll : MonoBehaviour
         {
             velocidade = 0.2f;
         }
-        if (GameManager.Instance.status == GameManager.GameStatus.selectTerrain)
+        if (GameManager.Instance.status == GameManager.GameStatus.selectTerrain || currentCamera == 0)
         {
             velocidade = 2f;
         }
@@ -173,8 +173,12 @@ public class CameraControll : MonoBehaviour
         }
     }
 
-    private void changeCam(int camTerrainID)
+    public void changeCam(int camTerrainID)
     {
+        if (camTerrainID == 0)// se estiver na camera principal
+        {
+            GameManager.Instance.status = GameManager.GameStatus.selectTerrain;// garante q qndo apertar o botao voltar ele mude o status para selecao de terreno
+        }
         DisableCams(camTerrainID);
         MyCams[camTerrainID].gameObject.SetActive(true);
         currentCamera = camTerrainID;

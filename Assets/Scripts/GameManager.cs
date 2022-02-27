@@ -192,6 +192,8 @@ public class GameManager : MonoBehaviour
                     ////passar como parametro de um evento o id do terreno q se esta gerenciando
                     if (OnChangeCamera != null) //// CHAMDA DO ENVENTO
                         OnChangeCamera(itemLista.TerrenoId);//passa como parametro o id para trocar a camera
+
+                    cancelSelectionOperation();// desabilita main menu
                 }
                 else
                 {
