@@ -10,6 +10,10 @@ using UnityEngine;
 
 public class CameraControll : MonoBehaviour
 {
+
+    public Camera[] MyCams;
+    public int currentCamera = 0;
+
     public float tamanhoBorda = 25.0f;
     public float velocidade = 10.0f;
 
@@ -26,9 +30,15 @@ public class CameraControll : MonoBehaviour
 
     void Start()
     {
+        MyCams[0].gameObject.SetActive(true);
+
         screenX = Screen.width;
         screenY = Screen.height;
+
+        DisableCams();//desabilita todas as cameras exceto a primeira
     }
+
+
 
     void Update()
     {
@@ -91,5 +101,13 @@ public class CameraControll : MonoBehaviour
         return new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
     }
 
-    
+
+
+    private void DisableCams()
+    {
+        for (int i = 1; i < MyCams.Length; i++)
+        {
+            MyCams[i].gameObject.SetActive(false);
+        }
+    }
 }

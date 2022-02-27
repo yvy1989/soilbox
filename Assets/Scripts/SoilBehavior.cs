@@ -27,7 +27,14 @@ public class SoilBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (isAvaiable)
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
+        }
+        else
+        {
+            transform.GetChild(0).gameObject.SetActive(true);
+        }
     }
 
     private void OnMouseOver()

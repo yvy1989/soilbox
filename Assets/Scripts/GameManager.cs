@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
 
     public GameStatus status;
 
-    public List<GameObject> myTerrains;
-    public GameObject TempTerrain;
+    public List<GameObject> myTerrains; //lista que guarda seus terrenos
+    public GameObject TempTerrain; // terreno temposrario q vai ser usado no raycast
 
     RaycastHit TempHit;
 
@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
     SoilBehavior soil;
 
     public Text Soil_ID;
+    
 
     public Text OperationTxt;
 
@@ -93,7 +94,7 @@ public class GameManager : MonoBehaviour
 
         Clique();
 
-        Debug.Log(MainMenuOption);
+        //Debug.Log(MainMenuOption);
         UpdateCreditsValues();
     }
 
@@ -167,8 +168,34 @@ public class GameManager : MonoBehaviour
 
     public void ManageTerrain(int _option)
     {
-        // testar
         MainMenuOption = _option;///verificar se usa
+
+        if (myTerrains.Count==0)
+        {
+            ShowInfo("Voce nao possui terrenos");
+        }
+        //verificar se o terreno e seu (se esta na lista)
+        foreach (var item in myTerrains)
+        {
+            Debug.Log("entrou no loop");
+            SoilBehavior itemLista = item.GetComponent<SoilBehavior>();// terreno q esta na lista ou nao
+            SoilBehavior temp = TempTerrain.GetComponent<SoilBehavior>();// terreno temporario q veio via raycast qndo clicou
+            
+            if(itemLista!=null)// tem terreno na lista e voce clicou em um terreno
+            {
+                if ((itemLista.TerrenoId == temp.TerrenoId) )//terreno e seu
+                {
+                    status = GameStatus.ManageTerrain;
+                    Debug.Log("gerenciou");
+                }
+                else
+                {
+                    ShowInfo("esse terreno nao e seu");
+                    //Debug.Log("esse terreno nao e seu else 1");
+                }
+            }
+        }
+    
     }
 
     ///////////////////////////////////////////
@@ -179,7 +206,10 @@ public class GameManager : MonoBehaviour
         if (MainMenuOption == 1) {//COMPRA    verificar se tem grana e se esta disponivel
             if (soil.isAvaiable && currentMoney>=soil.price)
             {
-                myTerrains.Add(TempTerrain);
+                GameObject terrain = new GameObject();// cria um novo gameObject
+                terrain = TempTerrain;// pega o GameObject q veio do raycast
+                myTerrains.Add(terrain);//adiciona o terreno criado na lista de terrenos
+
                 TempTerrain = null;
                 //evento para mudar o valor de disponibilidade depois da compra
                 if (OnManageSoilwhithId != null) //// CHAMDA DO ENVENTO
@@ -208,7 +238,7 @@ public class GameManager : MonoBehaviour
 
 
         }
-        if (MainMenuOption == 2)// venda ////BUG DE VENDA 2X ***************************************************************************
+        if (MainMenuOption == 2)// venda ////
         {
             foreach (var item in myTerrains)
             {
@@ -224,6 +254,7 @@ public class GameManager : MonoBehaviour
                             OnManageSoilwhithId(soil.TerrenoId, true);//passa como parametro o id para soilBehavior para deixar disponivel
 
                         ShowInfo("Venda Realizada com sucesso!!");
+                        myTerrains.Remove(item);// remove o terreno da lista
 
                         ConfirmationMenu.SetActive(false);
                         cancelSelectionOperation();// desabilita main menu
