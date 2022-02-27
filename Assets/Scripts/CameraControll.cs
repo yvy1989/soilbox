@@ -30,12 +30,14 @@ public class CameraControll : MonoBehaviour
 
     void Start()
     {
+        GameManager.Instance.OnChangeCamera += changeCam;
+
         MyCams[0].gameObject.SetActive(true);
 
         screenX = Screen.width;
         screenY = Screen.height;
 
-        DisableCams();//desabilita todas as cameras exceto a primeira
+        DisableCams(currentCamera);//desabilita todas as cameras exceto a primeira
     }
 
 
@@ -103,11 +105,22 @@ public class CameraControll : MonoBehaviour
 
 
 
-    private void DisableCams()
+    private void DisableCams(int expetion)
     {
-        for (int i = 1; i < MyCams.Length; i++)
+        for (int i = 0; i < MyCams.Length; i++)
         {
-            MyCams[i].gameObject.SetActive(false);
+            if (i != expetion)
+            {
+                MyCams[i].gameObject.SetActive(false);
+            }
+            
         }
+    }
+
+    private void changeCam(int camTerrainID)
+    {
+        DisableCams(camTerrainID);
+        MyCams[camTerrainID].gameObject.SetActive(true);
+
     }
 }

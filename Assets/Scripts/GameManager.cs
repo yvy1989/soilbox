@@ -9,6 +9,7 @@ using UnityEngine.UIElements;
 public class GameManager : MonoBehaviour
 {
     public event Action<int,bool> OnManageSoilwhithId;
+    public event Action<int> OnChangeCamera;
 
     public enum GameStatus
     {
@@ -186,7 +187,11 @@ public class GameManager : MonoBehaviour
                 if ((itemLista.TerrenoId == temp.TerrenoId) )//terreno e seu
                 {
                     status = GameStatus.ManageTerrain;
-                    Debug.Log("gerenciou");
+                    Debug.Log("gerenciou");/////////////////////////
+                    
+                    ////passar como parametro de um evento o id do terreno q se esta gerenciando
+                    if (OnChangeCamera != null) //// CHAMDA DO ENVENTO
+                        OnChangeCamera(itemLista.TerrenoId);//passa como parametro o id para trocar a camera
                 }
                 else
                 {
@@ -216,6 +221,8 @@ public class GameManager : MonoBehaviour
                     OnManageSoilwhithId(soil.TerrenoId,false);//passa como parametro o id para soilBehavior para deixar indisponivel
 
                 currentMoney -= soil.price;//retira o valor do terreno do current money
+
+
 
                 ConfirmationMenu.SetActive(false);
                 cancelSelectionOperation();// desabilita main menu
