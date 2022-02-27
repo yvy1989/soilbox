@@ -1293,6 +1293,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e627e88f2861a24887cb1b5a02ba5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boxVisual: {fileID: 671360194}
+  clicavel:
+    serializedVersion: 2
+    m_Bits: 64
+  solo:
+    serializedVersion: 2
+    m_Bits: 8
   MyCams:
   - {fileID: 963194227}
   - {fileID: 1781931613}
@@ -4396,7 +4403,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &981985418
 Transform:
   m_ObjectHideFlags: 0

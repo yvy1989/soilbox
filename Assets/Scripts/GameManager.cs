@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
 
     private void Clique()
     {
-        
+  
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject() && !isMenuActive) //verifica se clicou com o mouse e nao esta em cima de um GameObject
         {
 
