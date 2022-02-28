@@ -188,12 +188,14 @@ public class GameManager : MonoBehaviour
                 {
                     status = GameStatus.ManageTerrain;
                     Debug.Log("gerenciou");/////////////////////////
+
                     
                     ////passar como parametro de um evento o id do terreno q se esta gerenciando
                     if (OnChangeCamera != null) //// CHAMDA DO ENVENTO
                         OnChangeCamera(itemLista.TerrenoId);//passa como parametro o id para trocar a camera
-
                     cancelSelectionOperation();// desabilita main menu
+                    break;
+
                 }
                 else
                 {
