@@ -178,7 +178,7 @@ public class GameManager : MonoBehaviour
         //verificar se o terreno e seu (se esta na lista)
         foreach (var item in myTerrains)
         {
-            Debug.Log("entrou no loop");
+            //Debug.Log("entrou no loop");
             SoilBehavior itemLista = item.GetComponent<SoilBehavior>();// terreno q esta na lista ou nao
             SoilBehavior temp = TempTerrain.GetComponent<SoilBehavior>();// terreno temporario q veio via raycast qndo clicou
             
@@ -187,7 +187,7 @@ public class GameManager : MonoBehaviour
                 if ((itemLista.TerrenoId == temp.TerrenoId) )//terreno e seu
                 {
                     status = GameStatus.ManageTerrain;
-                    Debug.Log("gerenciou");/////////////////////////
+                    //Debug.Log("gerenciou");/////////////////////////
 
                     
                     ////passar como parametro de um evento o id do terreno q se esta gerenciando
