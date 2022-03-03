@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// TESTE DE SELECAO
+/// </summary>
 public class UnitSelection : MonoBehaviour
 {
     public List<GameObject> unitList = new List<GameObject>();

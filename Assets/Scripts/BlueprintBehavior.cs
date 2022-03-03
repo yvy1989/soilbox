@@ -8,7 +8,7 @@ public class BlueprintBehavior : MonoBehaviour
     Vector3 movePoint;
     //public GameObject prefab;
 
-    public string unitName;/////////////////////////!!!!!!!!!!! IMPORTANTE o mesmo nome do aaset em Resources.Load via inspector
+    public string unitName;/////////////////////////!!!!!!!!!!! IMPORTANTE o mesmo nome do asset na pasta Resources via inspector
 
     GameObject _PrefabUnit;
     // Start is called before the first frame update
