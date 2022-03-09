@@ -6,6 +6,7 @@ public class BlueprintBehavior : MonoBehaviour
 {
     RaycastHit hit;
     Vector3 movePoint;
+    public Vector3 GridSizeToSnap;
     //public GameObject prefab;
 
     public string unitName;/////////////////////////!!!!!!!!!!! IMPORTANTE o mesmo nome do asset na pasta Resources via inspector
@@ -25,14 +26,19 @@ public class BlueprintBehavior : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, (1 << 3)))//1<<3 tag solo
         {
-            transform.position = hit.point;
+            Vector3 snapPosition = new Vector3(Mathf.RoundToInt(hit.point.x/GridSizeToSnap.x)*GridSizeToSnap.x,
+                                               hit.point.y, 
+                                               Mathf.RoundToInt(hit.point.z/GridSizeToSnap.z)*GridSizeToSnap.z);
+            transform.position = snapPosition;
         }
 
         if (Input.GetMouseButton(0))
         {
             //Instantiate(prefab, transform.position, transform.rotation);
             //GameObject g = Instantiate(Resources.Load($"Prefabs/{unitName}"), transform.position, transform.rotation) as GameObject;
+            //Vector3 snapPosition = new Vector3(Mathf.RoundToInt(transform.position.x),transform.position.y,Mathf.RoundToInt(transform.position.z));
             Instantiate(_PrefabUnit, transform.position, transform.rotation);
+            //Instantiate(_PrefabUnit, snapPosition, transform.rotation);
             Destroy(gameObject);
         }
     }
