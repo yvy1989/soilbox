@@ -10,6 +10,7 @@ using UnityEngine;
 
 public class CameraControll : MonoBehaviour
 {
+
     public RectTransform boxVisual;
 
     Rect selectionBox;
@@ -132,23 +133,74 @@ public class CameraControll : MonoBehaviour
 
         if (Input.mousePosition.x < tamanhoBorda && transform.position.z >= limiteHorizontalEsquerdo)
         {
-            posicao.z = -1;
+            
+            if (GameManager.Instance.status == GameManager.GameStatus.ManageTerrain)//verifica se esta na tela de gerenciamento
+            {
+                //move a camera p esquerda
+                posicao.x = 1;
+                posicao.z = -1;
+            }
+            else
+            {
+                posicao.z = -1;
+            }
+
         }
         if (Input.mousePosition.x > (screenX - tamanhoBorda) && transform.position.z <= limiteHorizontalDireito)
         {
-            posicao.z = 1;
-        }
+            
+            if (GameManager.Instance.status == GameManager.GameStatus.ManageTerrain)//verifica se esta na tela de gerenciamento
+            {
+                //move a camera p direita
+                posicao.x = -1;
+                posicao.z = 1;
+            }
+            else
+            {
+                posicao.z = 1;
+            }
 
+
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         if (Input.mousePosition.y < 25 && transform.position.x <= limiteVerticalInferior)
-            posicao.x = 1;
+        {
+            
+            if (GameManager.Instance.status == GameManager.GameStatus.ManageTerrain)//verifica se esta na tela de gerenciamento
+            {
+                //move a camera p baixo
+                posicao.x = 1;
+                posicao.z = 1;
+            }
+            else
+            {
+                posicao.x = 1;
+            }
+        }
+            
 
         if (Input.mousePosition.y > (screenY - tamanhoBorda) && transform.position.x >= limiteVerticalSuperior)
-            posicao.x = -1;
+        {
+           
+
+            if (GameManager.Instance.status == GameManager.GameStatus.ManageTerrain)//verifica se esta na tela de gerenciamento
+            {
+                //move a camera p cima
+                posicao.x = -1;
+                posicao.z = -1;
+
+            }
+            else
+            {
+                posicao.x = -1;
+            }
+            
+        }
+            
 
         if (posicao == Vector3.zero)
             posicao = GetKeyPosition();
 
-        //transform.Translate(posicao * velocidade * Time.deltaTime);
         MyCams[currentCamera].transform.localPosition +=  (posicao * velocidade * Time.deltaTime);
 
 

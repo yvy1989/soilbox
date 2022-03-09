@@ -1090,6 +1090,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e627e88f2861a24887cb1b5a02ba5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HoriVarX: -1
+  HoriVarZ: 1
+  VertVarX: -1
+  VertVarZ: 1
   boxVisual: {fileID: 671360194}
   clicavel:
     serializedVersion: 2

@@ -524,7 +524,7 @@ GameObject:
   - component: {fileID: 6533603442583263942}
   - component: {fileID: 8454856153127924589}
   - component: {fileID: 1732763431205821701}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21609,7 +21609,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3436659574083732596}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Broto-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28615,7 +28615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2421005102776401154}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Broto-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32823,7 +32823,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1245911854566851816}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Broto-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43490,6 +43490,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b15c2fcf014b3304eb4dc366dc64a686, type: 3}
       propertyPath: m_Name
       value: terra-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b15c2fcf014b3304eb4dc366dc64a686, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b15c2fcf014b3304eb4dc366dc64a686, type: 3}
       propertyPath: m_IsActive
