@@ -1130,8 +1130,8 @@ MonoBehaviour:
   limHorizDirSelecao: 25
   limVertSupSelecao: -0.54
   limVertInfSelecao: 8
-  limEsquerdo: {x: 15, y: 0, z: 57}
-  limDireito: {x: 71, y: 0, z: 71}
+  limEsquerdo: {x: 15, y: 0, z: 61}
+  limDireito: {x: 71, y: 0, z: 70}
   limSuperior: {x: 31, y: 0, z: 51}
   limInferior: {x: 45, y: 0, z: 71}
 --- !u!4 &265112491
