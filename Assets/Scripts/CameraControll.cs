@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -32,11 +30,17 @@ public class CameraControll : MonoBehaviour
     private float screenX;
     private float screenY;
 
-    public float limiteHorizontalEsquerdo;
-    public float limiteHorizontalDireito;
+    [Header("Limites da camera no modo de selecao de terreno")]
+    public float limHorizEsqSelecao;
+    public float limHorizDirSelecao;
+    public float limVertSupSelecao;
+    public float limVertInfSelecao;
 
-    public float limiteVerticalSuperior;
-    public float limiteVerticalInferior;
+    [Header("Limites da camera no modo de gerencia de terreno")]
+    public float limHorizEsqGerecenciamento;
+    public float limHorizDirGerecenciamento;
+    public float limVertSupGerecenciamento;
+    public float limVertInfGerecenciamento;
 
 
 
@@ -130,73 +134,60 @@ public class CameraControll : MonoBehaviour
     private void MoveCam()
     {
         Vector3 posicao = Vector3.zero;
+        Debug.Log("x = "+MyCams[currentCamera].transform.position.x+"  z = "+ MyCams[currentCamera].transform.position.z);
 
-        if (Input.mousePosition.x < tamanhoBorda && transform.position.z >= limiteHorizontalEsquerdo)
+
+        if (GameManager.Instance.status == GameManager.GameStatus.selectTerrain)//verifica se esta na tela de selecao de terreno//////////////////////////////////////
         {
-            
-            if (GameManager.Instance.status == GameManager.GameStatus.ManageTerrain)//verifica se esta na tela de gerenciamento
-            {
-                //move a camera p esquerda
-                posicao.x = 1;
-                posicao.z = -1;
-            }
-            else
+            /////////movimento horizontal
+            if (Input.mousePosition.x < tamanhoBorda && MyCams[currentCamera].transform.position.z >= limHorizEsqSelecao)
             {
                 posicao.z = -1;
             }
-
-        }
-        if (Input.mousePosition.x > (screenX - tamanhoBorda) && transform.position.z <= limiteHorizontalDireito)
-        {
-            
-            if (GameManager.Instance.status == GameManager.GameStatus.ManageTerrain)//verifica se esta na tela de gerenciamento
+            if (Input.mousePosition.x > (screenX - tamanhoBorda) && MyCams[currentCamera].transform.position.z <= limHorizDirSelecao)
             {
-                //move a camera p direita
+                posicao.z = 1;
+            }
+            /////////movimento vertical
+            if (Input.mousePosition.y < 25 && MyCams[currentCamera].transform.position.x <= limVertInfSelecao)
+            {
+                posicao.x = 1;
+            }
+
+            if (Input.mousePosition.y > (screenY - tamanhoBorda) && MyCams[currentCamera].transform.position.x >= limVertSupSelecao)
+            {
+                posicao.x = -1;
+            }
+        }
+
+        if (GameManager.Instance.status == GameManager.GameStatus.ManageTerrain)//verifica se esta na tela de gerenciamento//////////////////////////////////////////////////
+        {
+            /////////movimento horizontal
+            if (Input.mousePosition.x < tamanhoBorda && MyCams[currentCamera].transform.position.x >= 15 && MyCams[currentCamera].transform.position.z >= 57)
+            {
+                posicao.x = 1;
+                posicao.z = -1;
+            }
+            if (Input.mousePosition.x > (screenX - tamanhoBorda) && MyCams[currentCamera].transform.position.x <= 71 && MyCams[currentCamera].transform.position.z <= 71)
+            {
                 posicao.x = -1;
                 posicao.z = 1;
             }
-            else
-            {
-                posicao.z = 1;
-            }
-
-
-        }
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        if (Input.mousePosition.y < 25 && transform.position.x <= limiteVerticalInferior)
-        {
+            /////////movimento vertical
             
-            if (GameManager.Instance.status == GameManager.GameStatus.ManageTerrain)//verifica se esta na tela de gerenciamento
+            if (Input.mousePosition.y < 25 && MyCams[currentCamera].transform.position.x <= 45 && MyCams[currentCamera].transform.position.z <= 71)
             {
-                //move a camera p baixo
                 posicao.x = 1;
                 posicao.z = 1;
             }
-            else
-            {
-                posicao.x = 1;
-            }
-        }
-            
 
-        if (Input.mousePosition.y > (screenY - tamanhoBorda) && transform.position.x >= limiteVerticalSuperior)
-        {
-           
-
-            if (GameManager.Instance.status == GameManager.GameStatus.ManageTerrain)//verifica se esta na tela de gerenciamento
+            if (Input.mousePosition.y > (screenY - tamanhoBorda) && MyCams[currentCamera].transform.position.x >= 31 && MyCams[currentCamera].transform.position.z >=51)
             {
-                //move a camera p cima
                 posicao.x = -1;
                 posicao.z = -1;
-
             }
-            else
-            {
-                posicao.x = -1;
-            }
-            
         }
-            
+
 
         if (posicao == Vector3.zero)
             posicao = GetKeyPosition();
