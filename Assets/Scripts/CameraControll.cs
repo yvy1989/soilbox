@@ -9,6 +9,7 @@ using UnityEngine;
 public class CameraControll : MonoBehaviour
 {
 
+
     public RectTransform boxVisual;
 
     Rect selectionBox;
@@ -37,10 +38,11 @@ public class CameraControll : MonoBehaviour
     public float limVertInfSelecao;
 
     [Header("Limites da camera no modo de gerencia de terreno")]
-    public float limHorizEsqGerecenciamento;
-    public float limHorizDirGerecenciamento;
-    public float limVertSupGerecenciamento;
-    public float limVertInfGerecenciamento;
+    public Vector3 limEsquerdo;
+    public Vector3 limDireito;
+    public Vector3 limSuperior;
+    public Vector3 limInferior;
+
 
 
 
@@ -163,29 +165,28 @@ public class CameraControll : MonoBehaviour
         if (GameManager.Instance.status == GameManager.GameStatus.ManageTerrain)//verifica se esta na tela de gerenciamento//////////////////////////////////////////////////
         {
             /////////movimento horizontal
-            if (Input.mousePosition.x < tamanhoBorda && MyCams[currentCamera].transform.position.x >= 15 && MyCams[currentCamera].transform.position.z >= 57)
+            if (Input.mousePosition.x < tamanhoBorda && MyCams[currentCamera].transform.position.x >= limEsquerdo.x && MyCams[currentCamera].transform.position.z >= limEsquerdo.z)
             {
                 posicao.x = 1;
                 posicao.z = -1;
             }
-            if (Input.mousePosition.x > (screenX - tamanhoBorda) && MyCams[currentCamera].transform.position.x <= 71 && MyCams[currentCamera].transform.position.z <= 71)
+            if (Input.mousePosition.x > (screenX - tamanhoBorda) && MyCams[currentCamera].transform.position.x <= limDireito.x && MyCams[currentCamera].transform.position.z <= limDireito.z)
             {
                 posicao.x = -1;
                 posicao.z = 1;
             }
             /////////movimento vertical
-            
-            if (Input.mousePosition.y < 25 && MyCams[currentCamera].transform.position.x <= 45 && MyCams[currentCamera].transform.position.z <= 71)
+            if (Input.mousePosition.y > (screenY - tamanhoBorda) && MyCams[currentCamera].transform.position.x >= limSuperior.x && MyCams[currentCamera].transform.position.z >= limSuperior.z)
+            {
+                posicao.x = -1;
+                posicao.z = -1;
+            }
+            if (Input.mousePosition.y < 25 && MyCams[currentCamera].transform.position.x <= limInferior.x && MyCams[currentCamera].transform.position.z <= limInferior.z)
             {
                 posicao.x = 1;
                 posicao.z = 1;
             }
 
-            if (Input.mousePosition.y > (screenY - tamanhoBorda) && MyCams[currentCamera].transform.position.x >= 31 && MyCams[currentCamera].transform.position.z >=51)
-            {
-                posicao.x = -1;
-                posicao.z = -1;
-            }
         }
 
 
