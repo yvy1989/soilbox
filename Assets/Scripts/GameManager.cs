@@ -99,7 +99,9 @@ public class GameManager : MonoBehaviour
 
         //Debug.Log(MainMenuOption);
         UpdateCreditsValues();
+
         LimitCarbonControll();
+        LimitMoneyControll();
     }
 
     private void LimitCarbonControll()
@@ -109,6 +111,13 @@ public class GameManager : MonoBehaviour
         if (currentCarbon >= 100)
             currentCarbon = 100;
     }
+
+    private void LimitMoneyControll()
+    {
+        if (currentMoney <= 0)
+            currentMoney = 0;
+    }
+
 
     private void UpdateCreditsValues()
     {
@@ -293,7 +302,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void ShowInfo(string _info)
+    public void ShowInfo(string _info)
     {
         InfoMenu.SetActive(true);
         InfoText.text = _info;
@@ -306,4 +315,23 @@ public class GameManager : MonoBehaviour
         ConfirmationMenu.SetActive(false);
     }
 
+    public void addCarbon(float amount)
+    {
+        currentCarbon += amount;
+    }
+
+    public void RemoveCarbon(float amount)
+    {
+        currentCarbon -= amount;
+    }
+
+    public void addMoney(float amount)
+    {
+        currentMoney += amount;
+    }
+
+    public void RemoveMoney(float amount)
+    {
+        currentMoney -= amount;
+    }
 }

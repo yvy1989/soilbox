@@ -538,6 +538,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ac19a269c340b4e83bb4cd9100cadd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CostPlantationValue: 15
+  CostPlantatipnCarbon: 0.56
+  CostTreeValue: 10
+  TreeCarbonValue: -50
   UnitPrefab_blueprint:
   - {fileID: 7160678565809388818, guid: 90428a094b232774f8581e8220016bbf, type: 3}
   - {fileID: 6387294052139420951, guid: cdeeff257b0458b4ca3118934ca926c9, type: 3}
