@@ -29,11 +29,13 @@ public class GameManager : MonoBehaviour
 
     public bool isMenuActive = false; //esconder o canvas
 
-    public int startMoney;
-    public int currentMoney;
+    public float startMoney;
+    public float currentMoney;
+    public float MaxMoney;
 
-    public int startCarbon;
-    public int currentCarbon;
+    public float startCarbon;
+    public float currentCarbon;
+    public float maxCarbon;
 
     ////////////////////////////////////VAI VIRAR UI manager////////////////////////////
     public Canvas menuCanvas;
@@ -97,6 +99,15 @@ public class GameManager : MonoBehaviour
 
         //Debug.Log(MainMenuOption);
         UpdateCreditsValues();
+        LimitCarbonControll();
+    }
+
+    private void LimitCarbonControll()
+    {
+        if (currentCarbon <= -100)
+            currentCarbon = -100;
+        if (currentCarbon >= 100)
+            currentCarbon = 100;
     }
 
     private void UpdateCreditsValues()

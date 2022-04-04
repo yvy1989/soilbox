@@ -136,7 +136,7 @@ public class CameraControll : MonoBehaviour
     private void MoveCam()
     {
         Vector3 posicao = Vector3.zero;
-        Debug.Log("x = "+MyCams[currentCamera].transform.position.x+"  z = "+ MyCams[currentCamera].transform.position.z);
+        //Debug.Log("x = "+MyCams[currentCamera].transform.position.x+"  z = "+ MyCams[currentCamera].transform.position.z);
 
 
         if (GameManager.Instance.status == GameManager.GameStatus.selectTerrain)//verifica se esta na tela de selecao de terreno//////////////////////////////////////
