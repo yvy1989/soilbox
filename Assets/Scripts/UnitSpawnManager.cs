@@ -24,7 +24,7 @@ public class UnitSpawnManager : MonoBehaviour
                 {
                     if (GameManager.Instance.currentMoney > 0)
                     {
-                        GameManager.Instance.addCarbon(CostPlantatipnCarbon);// adicao de carbono qndo planta
+                        GameManager.Instance.addCarbon(CostPlantatipnCarbon);// adicao de carbono qndo planta milho
                         GameManager.Instance.RemoveMoney(CostPlantationValue);// remover dinheiro
                         Instantiate(UnitPrefab_blueprint[index]);// acessado via Button
                     }
@@ -38,7 +38,16 @@ public class UnitSpawnManager : MonoBehaviour
                 }
             case 1:// arvore;
                 {
-
+                    if (GameManager.Instance.currentMoney > 0)
+                    {
+                        GameManager.Instance.addCarbon(TreeCarbonValue);// remocao de carbono qndo planta arvores
+                        GameManager.Instance.RemoveMoney(CostTreeValue);// remover dinheiro
+                        Instantiate(UnitPrefab_blueprint[index]);// acessado via Button
+                    }
+                    else
+                    {
+                        GameManager.Instance.ShowInfo("Voce nao tem dinheiro sufuciente");
+                    }
                     break;
                 }
 
