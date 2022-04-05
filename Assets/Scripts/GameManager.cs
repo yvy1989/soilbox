@@ -8,6 +8,14 @@ using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
+    public float CostPlantationValue;
+    public float CostPlantatipnCarbon;
+
+
+    public float CostTreeValue;
+    public float TreeCarbonValue;
+
+
     public event Action<int,bool> OnManageSoilwhithId;
     public event Action<int> OnChangeCamera;
 

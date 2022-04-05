@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class UnitSpawnManager : MonoBehaviour
 {
-    public float CostPlantationValue;
-    public float CostPlantatipnCarbon;
-
-
-    public float CostTreeValue;
-    public float TreeCarbonValue;
-
 
     public GameObject[] UnitPrefab_blueprint;
 
@@ -24,8 +17,8 @@ public class UnitSpawnManager : MonoBehaviour
                 {
                     if (GameManager.Instance.currentMoney > 0)
                     {
-                        GameManager.Instance.addCarbon(CostPlantatipnCarbon);// adicao de carbono qndo planta milho
-                        GameManager.Instance.RemoveMoney(CostPlantationValue);// remover dinheiro
+                        GameManager.Instance.addCarbon(GameManager.Instance.CostPlantatipnCarbon);// adicao de carbono qndo planta milho
+                        GameManager.Instance.RemoveMoney(GameManager.Instance.CostPlantationValue);// remover dinheiro
                         Instantiate(UnitPrefab_blueprint[index]);// acessado via Button
                     }
                     else
@@ -40,8 +33,8 @@ public class UnitSpawnManager : MonoBehaviour
                 {
                     if (GameManager.Instance.currentMoney > 0)
                     {
-                        GameManager.Instance.addCarbon(TreeCarbonValue);// remocao de carbono qndo planta arvores
-                        GameManager.Instance.RemoveMoney(CostTreeValue);// remover dinheiro
+                        GameManager.Instance.addCarbon(GameManager.Instance.TreeCarbonValue);// remocao de carbono qndo planta arvores
+                        GameManager.Instance.RemoveMoney(GameManager.Instance.CostTreeValue);// remover dinheiro
                         Instantiate(UnitPrefab_blueprint[index]);// acessado via Button
                     }
                     else

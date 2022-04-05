@@ -1330,7 +1330,7 @@ MonoBehaviour:
   limHorizDirSelecao: 25
   limVertSupSelecao: -0.54
   limVertInfSelecao: 8
-  limEsquerdo: {x: 15, y: 0, z: 61}
+  limEsquerdo: {x: 15, y: 0, z: 51}
   limDireito: {x: 71, y: 0, z: 70}
   limSuperior: {x: 31, y: 0, z: 51}
   limInferior: {x: 45, y: 0, z: 71}
@@ -5949,6 +5949,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca39b9f8ddc2b09459598e2a9db7c950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CostPlantationValue: 15
+  CostPlantatipnCarbon: 0.56
+  CostTreeValue: 10
+  TreeCarbonValue: -10
   status: 0
   myTerrains: []
   TempTerrain: {fileID: 0}
