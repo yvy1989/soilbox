@@ -48,7 +48,7 @@ public class CameraControll : MonoBehaviour
 
     void Start()
     {
-        DrawVisual();
+        //DrawVisual();
         startPosition = Vector2.zero;
         endPosition = Vector2.zero;
 
@@ -75,9 +75,9 @@ public class CameraControll : MonoBehaviour
         MoveCam();
         zoomScroll();
 
-        UnitClick();
+        //UnitClick();
 
-        UnitDrag();
+        //UnitDrag();
 
         if (GameManager.Instance.status == GameManager.GameStatus.ManageTerrain)
         {
@@ -89,31 +89,7 @@ public class CameraControll : MonoBehaviour
         }
     }
 
-    private void UnitDrag()
-    {
-        //quando clica
-        if (Input.GetMouseButtonDown(0))
-        {
-            startPosition = Input.mousePosition;
-            selectionBox = new Rect();
-
-        }
-        //quando arrasta
-        if (Input.GetMouseButton(0))
-        {
-            endPosition = Input.mousePosition;
-            DrawVisual();
-            DrawSelection();
-        }
-        //quando solta
-        if (Input.GetMouseButtonUp(0))
-        {
-            startPosition = Vector2.zero;
-            endPosition = Vector2.zero;
-            DrawVisual();
-            SelectUnits();
-        }
-    }
+    
 
     private static void zoomScroll()
     {
@@ -228,7 +204,34 @@ public class CameraControll : MonoBehaviour
         currentCamera = camTerrainID;
 
     }
+    /* select units
+     * 
+     
+    private void UnitDrag()
+    {
+        //quando clica
+        if (Input.GetMouseButtonDown(0))
+        {
+            startPosition = Input.mousePosition;
+            selectionBox = new Rect();
 
+        }
+        //quando arrasta
+        if (Input.GetMouseButton(0))
+        {
+            endPosition = Input.mousePosition;
+            DrawVisual();
+            DrawSelection();
+        }
+        //quando solta
+        if (Input.GetMouseButtonUp(0))
+        {
+            startPosition = Vector2.zero;
+            endPosition = Vector2.zero;
+            DrawVisual();
+            SelectUnits();
+        }
+    }
     private void UnitClick()
     {
 
@@ -305,6 +308,7 @@ public class CameraControll : MonoBehaviour
         }
     }
 
+    
     void SelectUnits()
     {
         //loop em toda unidades
@@ -317,6 +321,6 @@ public class CameraControll : MonoBehaviour
                 UnitSelection.Instance.DragSelect(unit);
             }
         }
-    }
+    }*/
 }
 
