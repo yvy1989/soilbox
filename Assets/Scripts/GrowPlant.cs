@@ -7,12 +7,14 @@ public class GrowPlant : MonoBehaviour
     //public int TimesToGrowUp;
     public int levelsCount;
 
+    public int Plant_final_stage;
+
     public float sizePlantDuration;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
         StartCoroutine(GrowCoroutine());
     }
 
@@ -23,7 +25,7 @@ public class GrowPlant : MonoBehaviour
         for (int i = 0; i < levelsCount; i++)
         {
             yield return new WaitForSeconds(sizePlantDuration);
-            Debug.Log("cresceu");
+            //Debug.Log("cresceu");//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             transform.GetChild(i).gameObject.SetActive(true);
 
             disableChild(i);
