@@ -32,13 +32,21 @@ public class BlueprintBehavior : MonoBehaviour
             transform.position = snapPosition;
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0))//clicou com o esquerdo do mouse
         {
             //Instantiate(prefab, transform.position, transform.rotation);
             //GameObject g = Instantiate(Resources.Load($"Prefabs/{unitName}"), transform.position, transform.rotation) as GameObject;
             //Vector3 snapPosition = new Vector3(Mathf.RoundToInt(transform.position.x),transform.position.y,Mathf.RoundToInt(transform.position.z));
             Instantiate(_PrefabUnit, transform.position, transform.rotation);
+
+            GameManager.Instance.addCarbon(GameManager.Instance.CostPlantatipnCarbon);// adicao de carbono qndo planta milho
+            GameManager.Instance.RemoveMoney(GameManager.Instance.CostPlantationValue);// remover dinheiro
+
             //Instantiate(_PrefabUnit, snapPosition, transform.rotation);
+            Destroy(gameObject);
+        }
+        if (Input.GetMouseButton(1))//clicou com o direito do mouse
+        {
             Destroy(gameObject);
         }
     }

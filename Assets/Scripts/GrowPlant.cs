@@ -6,6 +6,7 @@ public class GrowPlant : MonoBehaviour
 {
     //public int TimesToGrowUp;
     public int levelsCount;
+    public int CurrentlevelsCount;
 
     public int Plant_final_stage;
 
@@ -41,6 +42,7 @@ public class GrowPlant : MonoBehaviour
                 continue;
             }
             transform.GetChild(i).gameObject.SetActive(false);
+
         }
     }
 }

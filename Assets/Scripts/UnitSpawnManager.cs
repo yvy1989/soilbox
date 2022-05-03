@@ -7,7 +7,7 @@ public class UnitSpawnManager : MonoBehaviour
 
     public GameObject[] UnitPrefab_blueprint;
 
-    public void spawn_Units_blueprint_ByIndex(int index)
+    public void spawn_Units_blueprint_ByIndex(int index)// chamada qndo se clica no botao e recebe o index como parametro
     {
 
 
@@ -15,10 +15,10 @@ public class UnitSpawnManager : MonoBehaviour
         {
             case 0:// plantacao;
                 {
+
                     if (GameManager.Instance.currentMoney > 0)
                     {
-                        GameManager.Instance.addCarbon(GameManager.Instance.CostPlantatipnCarbon);// adicao de carbono qndo planta milho
-                        GameManager.Instance.RemoveMoney(GameManager.Instance.CostPlantationValue);// remover dinheiro
+                        
                         Instantiate(UnitPrefab_blueprint[index]);// acessado via Button
                     }
                     else
