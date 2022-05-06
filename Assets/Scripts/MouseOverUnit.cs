@@ -15,8 +15,6 @@ public class MouseOverUnit : MonoBehaviour
         myPlant = Unit.GetComponent<GrowPlant>();
         painel = GetComponentInChildren<Canvas>().transform.GetChild(0).gameObject;
         painel.SetActive(isPanelAvcive); //desativa o painel
-
-        
     }
 
     // Update is called once per frame

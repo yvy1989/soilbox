@@ -32589,7 +32589,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc232162b346ecf48a705ed769c55a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeUnity: 0
   levelsCount: 3
+  CurrentlevelsCount: 0
   Plant_final_stage: 0
   sizePlantDuration: 5
 --- !u!1 &7166815393158175958
@@ -43481,6 +43483,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Select
       objectReference: {fileID: 0}
+    - target: {fileID: 1416618437866912056, guid: 9952628faa3a4c649ab0439facdee42a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3042771523338524271, guid: 9952628faa3a4c649ab0439facdee42a, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -43532,6 +43538,14 @@ PrefabInstance:
     - target: {fileID: 4202514686101068766, guid: 9952628faa3a4c649ab0439facdee42a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200056613330905318, guid: 9952628faa3a4c649ab0439facdee42a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877446977614542419, guid: 9952628faa3a4c649ab0439facdee42a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9952628faa3a4c649ab0439facdee42a, type: 3}
