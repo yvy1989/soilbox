@@ -46,4 +46,10 @@ public class MouseOverUnit : MonoBehaviour
         painel.SetActive(false);
         Destroy(Unit);
     }
+
+    public void cancelar()
+    {
+        painel.SetActive(false);
+        isPanelAvcive = false;
+    }
 }
