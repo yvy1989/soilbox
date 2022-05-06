@@ -33,8 +33,7 @@ public class UnitSpawnManager : MonoBehaviour
                 {
                     if (GameManager.Instance.currentMoney > 0)
                     {
-                        GameManager.Instance.addCarbon(GameManager.Instance.TreeCarbonValue);// remocao de carbono qndo planta arvores
-                        GameManager.Instance.RemoveMoney(GameManager.Instance.CostTreeValue);// remover dinheiro
+
                         Instantiate(UnitPrefab_blueprint[index]);// acessado via Button
                     }
                     else

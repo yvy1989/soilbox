@@ -47,7 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc232162b346ecf48a705ed769c55a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeUnity: 1
   levelsCount: 4
+  CurrentlevelsCount: 0
+  Plant_final_stage: 0
   sizePlantDuration: 5
 --- !u!1001 &1338620638227899548
 PrefabInstance:

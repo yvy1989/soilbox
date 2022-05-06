@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class GrowPlant : MonoBehaviour
 {
-    //public int TimesToGrowUp;
+
+   
+    [Header("0 -> plants | 1 -> trees")]
+    [Header("typeUnity")]
+    public int typeUnity;
+
     public int levelsCount;
     public int CurrentlevelsCount;
 
