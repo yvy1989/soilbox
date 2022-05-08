@@ -266,7 +266,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Colher
+  m_Text: Colher/Derrubar
 --- !u!1 &3182395366115468012
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 2472395485672787348}
   - component: {fileID: 689554145320780786}
   m_Layer: 5
-  m_Name: BtnColher
+  m_Name: BtnColherDerrubar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

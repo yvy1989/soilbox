@@ -12,7 +12,7 @@ public class MouseOverUnit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myPlant = Unit.GetComponent<GrowPlant>();
+        myPlant = Unit.GetComponent<GrowPlant>();//pega a referencia da unidade
         painel = GetComponentInChildren<Canvas>().transform.GetChild(0).gameObject;
         painel.SetActive(isPanelAvcive); //desativa o painel
     }
@@ -46,10 +46,20 @@ public class MouseOverUnit : MonoBehaviour
 
     public void colher()
     {
-        if (myPlant.isReady)
+        if (myPlant.isReady)//se a plante estiver pronta p colher ou derrubar
         {
-            painel.SetActive(false);
-            Destroy(Unit);
+            if (myPlant.typeUnity == 1)// se for arvore
+            {
+                painel.SetActive(false);
+                myPlant.downTree();
+                Invoke("waitToDownTree", 4f);
+            }
+            else// se nao for arvore
+            {
+                painel.SetActive(false);
+                Destroy(Unit);
+            }
+            
         }
         else
         {
@@ -63,5 +73,11 @@ public class MouseOverUnit : MonoBehaviour
     {
         painel.SetActive(false);
         isPanelAvcive = false;
+    }
+
+    void waitToDownTree()
+    {
+
+        Destroy(Unit);
     }
 }

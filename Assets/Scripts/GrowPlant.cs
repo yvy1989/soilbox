@@ -6,6 +6,9 @@ public class GrowPlant : MonoBehaviour
 {
     public bool isReady = false;
 
+    public GameObject TreeDown;
+    public GameObject TreeFinal;
+
    
     [Header("0 -> plants | 1 -> trees")]
     [Header("typeUnity")]
@@ -57,5 +60,12 @@ public class GrowPlant : MonoBehaviour
             transform.GetChild(i).gameObject.SetActive(false);
 
         }
+    }
+
+    public void downTree()
+    {
+        TreeFinal.SetActive(false);
+        TreeDown.SetActive(true);
+        isReady = false;
     }
 }
