@@ -35,9 +35,12 @@ public class MouseOverUnit : MonoBehaviour
 
     private void OnMouseDown()
     {
+        
         isPanelAvcive = !isPanelAvcive;
 
         painel.SetActive(isPanelAvcive);
+
+
 
     }
 
@@ -51,6 +54,7 @@ public class MouseOverUnit : MonoBehaviour
         else
         {
             GameManager.Instance.ShowInfo("Ainda nao e possivel colher ou destruir");
+            painel.SetActive(false);
         }
         
     }
