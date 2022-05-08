@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// classe responsavel por gerenciar os spawns apos sair da UI ou cancelar estes spawns
+/// mover por snapGrid dentro do terreno
+/// Spawnar o asset que se encontra dentro da pasta RESOURCES
+/// </summary>
+
 public class BlueprintBehavior : MonoBehaviour
 {
     RaycastHit hit;
@@ -15,7 +21,7 @@ public class BlueprintBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
         _PrefabUnit = Resources.Load(unitName) as GameObject;
 
     }
@@ -26,9 +32,9 @@ public class BlueprintBehavior : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, (1 << 3)))//1<<3 tag solo
         {
-            Vector3 snapPosition = new Vector3(Mathf.RoundToInt(hit.point.x/GridSizeToSnap.x)*GridSizeToSnap.x,
-                                               hit.point.y, 
-                                               Mathf.RoundToInt(hit.point.z/GridSizeToSnap.z)*GridSizeToSnap.z);
+            Vector3 snapPosition = new Vector3(Mathf.RoundToInt(hit.point.x / GridSizeToSnap.x) * GridSizeToSnap.x,
+                                               hit.point.y,
+                                               Mathf.RoundToInt(hit.point.z / GridSizeToSnap.z) * GridSizeToSnap.z);
             transform.position = snapPosition;
         }
 
@@ -58,9 +64,9 @@ public class BlueprintBehavior : MonoBehaviour
                 //Instantiate(_PrefabUnit, snapPosition, transform.rotation);
                 Destroy(gameObject);
             }
-            
+
         }
-        if (Input.GetMouseButton(1))//clicou com o direito do mouse
+        if (Input.GetMouseButton(1) || Input.GetKeyDown(KeyCode.Escape))//clicou com o direito do mouse ou apertou escape cancela o spawn da unidade
         {
             Destroy(gameObject);
         }

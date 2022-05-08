@@ -32589,6 +32589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc232162b346ecf48a705ed769c55a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isReady: 0
   typeUnity: 0
   levelsCount: 3
   CurrentlevelsCount: 0
@@ -43531,6 +43532,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3182395366115468012, guid: 9952628faa3a4c649ab0439facdee42a, type: 3}
+      propertyPath: m_Name
+      value: BtnColher
+      objectReference: {fileID: 0}
     - target: {fileID: 4202514686101068766, guid: 9952628faa3a4c649ab0439facdee42a, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -2
@@ -43538,6 +43543,10 @@ PrefabInstance:
     - target: {fileID: 4202514686101068766, guid: 9952628faa3a4c649ab0439facdee42a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445760885911175149, guid: 9952628faa3a4c649ab0439facdee42a, type: 3}
+      propertyPath: m_Name
+      value: BtnCancelar
       objectReference: {fileID: 0}
     - target: {fileID: 5200056613330905318, guid: 9952628faa3a4c649ab0439facdee42a, type: 3}
       propertyPath: m_Enabled

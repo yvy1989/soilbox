@@ -20,7 +20,7 @@ public class MouseOverUnit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(myPlant.CurrentlevelsCount);
+        //Debug.Log(myPlant.CurrentlevelsCount);
     }
 
     private void OnMouseEnter()
@@ -43,8 +43,16 @@ public class MouseOverUnit : MonoBehaviour
 
     public void colher()
     {
-        painel.SetActive(false);
-        Destroy(Unit);
+        if (myPlant.isReady)
+        {
+            painel.SetActive(false);
+            Destroy(Unit);
+        }
+        else
+        {
+            GameManager.Instance.ShowInfo("Ainda nao e possivel colher ou destruir");
+        }
+        
     }
 
     public void cancelar()

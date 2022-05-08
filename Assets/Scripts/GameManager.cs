@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
     public GameObject ConfirmationMenu;
 
     public GameObject InfoMenu;
+    Vector2 InfoMenScreenPoin;
     public Text InfoText;
 
 
@@ -147,6 +148,7 @@ public class GameManager : MonoBehaviour
             var screenPoint = Input.mousePosition;
             screenPoint.z = 10.0f; //distance of the plane from the camera
             MainMenu.GetComponent<RectTransform>().position = screenPoint;
+            InfoMenScreenPoin = screenPoint;
             /////
 
             InfoMenu.SetActive(false);/// desabilita infoBox
@@ -177,6 +179,11 @@ public class GameManager : MonoBehaviour
         isMenuActive = false;
 
         TempHit.transform.GetComponent<MeshRenderer>().enabled = false;
+    }
+
+    public void cancelInfo()//////////////////////////////////////////////////////////////////////////////////////////////////////////////////UI
+    {
+        InfoMenu.SetActive(false);
     }
 
 
@@ -313,8 +320,9 @@ public class GameManager : MonoBehaviour
     public void ShowInfo(string _info)
     {
         InfoMenu.SetActive(true);
+        InfoMenu.GetComponent<RectTransform>().position = InfoMenScreenPoin;
         InfoText.text = _info;
-        isMenuActive = true;
+        //isMenuActive = true;
       
     }
 

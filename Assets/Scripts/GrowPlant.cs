@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GrowPlant : MonoBehaviour
 {
+    public bool isReady = false;
 
    
     [Header("0 -> plants | 1 -> trees")]
@@ -24,8 +25,13 @@ public class GrowPlant : MonoBehaviour
         StartCoroutine(GrowCoroutine());
     }
 
+    private void Update()
+    {
+        Debug.Log(isReady);
+    }
 
-    
+
+
     IEnumerator GrowCoroutine()
     {
         for (int i = 0; i < levelsCount; i++)
@@ -36,6 +42,8 @@ public class GrowPlant : MonoBehaviour
 
             disableChild(i);
         }
+
+        isReady = true;
     }
 
     void disableChild(int exept)// desabilita os outros childs
