@@ -33,11 +33,11 @@ public class UiController : MonoBehaviour
 
         
 
-        if (currCarb > 0) //vermelho
+        if (currCarb >= 0) //vermelho
         {
             RedCarbonAmount.fillAmount = (currCarb / 100);
         }
-        if (currCarb < 0) //verde
+        if (currCarb <= 0) //verde
         {
             GreenCarbonAmount.fillAmount = (currCarb / -100);
 
