@@ -14,6 +14,8 @@ public class GrowPlant : MonoBehaviour
     [Header("typeUnity")]
     public int typeUnity;
 
+    public float MoneyReward; //dinheiro que se ganha ao colher ou dano ao derrubar // por enquanto tanto arvore qnto planta usam a mesma variavel
+
     public int levelsCount;
     public int CurrentlevelsCount;
 

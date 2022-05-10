@@ -8,12 +8,14 @@ using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
-    public float CostPlantationValue;
-    public float CostPlantatipnCarbon;
+    public float CostPlantationValue; //custo de dinheiro para plantar
+    public float CostPlantatipnCarbon;//custo de carbono para plantar
 
 
-    public float CostTreeValue;
-    public float TreeCarbonValue;
+    public float CostTreeValue;//custo de dinheiro para plantar arvore
+    public float TreeCarbonValue;//custo de carbono por arvore para remover
+
+    public float DownTreeCarbon;//custo de carbono por derrubar arvore
 
 
     public event Action<int,bool> OnManageSoilwhithId;
@@ -38,7 +40,7 @@ public class GameManager : MonoBehaviour
     public bool isMenuActive = false; //esconder o canvas
 
     public float startMoney;
-    public float currentMoney;
+    public float currentMoney;// MEU DINHEIRO ATUAL
     public float MaxMoney;
 
     public float startCarbon;
@@ -113,7 +115,7 @@ public class GameManager : MonoBehaviour
         LimitMoneyControll();
     }
 
-    private void LimitCarbonControll()
+    private void LimitCarbonControll()// usado na barra de carbono
     {
         if (currentCarbon <= -100)
             currentCarbon = -100;
@@ -121,7 +123,7 @@ public class GameManager : MonoBehaviour
             currentCarbon = 100;
     }
 
-    private void LimitMoneyControll()
+    private void LimitMoneyControll()//usado na barra de dinheiro
     {
         if (currentMoney <= 0)
             currentMoney = 0;

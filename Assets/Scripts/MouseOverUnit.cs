@@ -52,14 +52,19 @@ public class MouseOverUnit : MonoBehaviour
             {
                 painel.SetActive(false);
                 myPlant.downTree();
-                Invoke("waitToDownTree", 4f);
+                Invoke("waitToDownTree", 4f);// espera 4 segundos antes de destruir a arvore
+                GameManager.Instance.addCarbon(GameManager.Instance.DownTreeCarbon);// da dano de carbono por derrubar arvore;
             }
             else// se nao for arvore
-            {
+            {           
                 painel.SetActive(false);
                 Destroy(Unit);
             }
-            
+
+            GameManager.Instance.addMoney(myPlant.MoneyReward);// por enquanto tanto arvore qnto planta usam a mesma variavel
+
+            //GameManager.Instance.CostPlantatipnCarbon;
+
         }
         else
         {

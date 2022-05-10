@@ -32590,7 +32590,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isReady: 0
+  TreeDown: {fileID: 0}
+  TreeFinal: {fileID: 0}
   typeUnity: 0
+  MoneyReward: 25
   levelsCount: 3
   CurrentlevelsCount: 0
   Plant_final_stage: 0

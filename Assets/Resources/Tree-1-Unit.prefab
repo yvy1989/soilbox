@@ -53,6 +53,7 @@ MonoBehaviour:
   TreeDown: {fileID: 6446764471782201728}
   TreeFinal: {fileID: 2185043726128749005}
   typeUnity: 1
+  MoneyReward: -10
   levelsCount: 4
   CurrentlevelsCount: 0
   Plant_final_stage: 0
