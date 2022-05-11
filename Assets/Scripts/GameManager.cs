@@ -26,10 +26,10 @@ public class GameManager : MonoBehaviour
         selectTerrain, ManageTerrain, GameOver, Win
     }
 
-    public GameStatus status;
+    public GameStatus status;//////////////////////////////////////<<<<<<<<<<<===================================RETIRAR O A===========================================
 
     public List<GameObject> myTerrains; //lista que guarda seus terrenos
-    public GameObject TempTerrain; // terreno temposrario q vai ser usado no raycast
+    public GameObject TempTerrain; // terreno temporario q vai ser usado no raycast
 
     RaycastHit TempHit;
 

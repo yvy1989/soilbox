@@ -75,15 +75,12 @@ public class CameraControll : MonoBehaviour
         MoveCam();
         zoomScroll();
 
-        //UnitClick();
 
-        //UnitDrag();
-
-        if (GameManager.Instance.status == GameManager.GameStatus.ManageTerrain)
+        if (GameManager.Instance.status == GameManager.GameStatus.ManageTerrain) //gerenciamento de terreno velocidade mais lenta
         {
             velocidade = 0.2f;
         }
-        if (GameManager.Instance.status == GameManager.GameStatus.selectTerrain || currentCamera == 0)
+        if (GameManager.Instance.status == GameManager.GameStatus.selectTerrain || currentCamera == 0)// selecao de terreno velocidade mais rapida
         {
             velocidade = 2f;
         }
