@@ -5820,6 +5820,8 @@ MonoBehaviour:
   CostPlantatipnCarbon: 0.56
   CostTreeValue: 10
   TreeCarbonValue: -10
+  CostAnimalValue: 10
+  AnimalCarbonValue: -5
   DownTreeCarbon: 10
   status: 0
   myTerrains: []
@@ -8590,7 +8592,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -5.2678986}
+  m_AnchoredPosition: {x: 0, y: -5.2678833}
   m_SizeDelta: {x: -663.097, y: -262.5358}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2077774423
