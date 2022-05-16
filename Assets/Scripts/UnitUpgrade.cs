@@ -9,6 +9,9 @@ public class UnitUpgrade : MonoBehaviour
     public GameObject TreeDown;
     public GameObject TreeFinal;
 
+    Animator animalAnim;
+    public Transform[] GrassPosition;
+
    
     [Header("0 -> plants | 1 -> trees| 2 -> animal")]
     [Header("typeUnity")]
@@ -30,12 +33,18 @@ public class UnitUpgrade : MonoBehaviour
         {
             StartCoroutine(GrowCoroutine());
         }
+        else // e um animal
+        {
+            animalAnim = transform.GetComponentInChildren<Animator>();
+            //criar rotina de IA
+        }
         
     }
 
     private void Update()
     {
         Debug.Log(isReady);
+
     }
 
 
