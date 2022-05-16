@@ -42,6 +42,19 @@ public class UnitSpawnManager : MonoBehaviour
                     }
                     break;
                 }
+            case 2:// animal;
+                {
+                    if (GameManager.Instance.currentMoney > 0)
+                    {
+
+                        Instantiate(UnitPrefab_blueprint[index]);// acessado via Button
+                    }
+                    else
+                    {
+                        GameManager.Instance.ShowInfo("Voce nao tem dinheiro sufuciente");
+                    }
+                    break;
+                }
 
         }
     }

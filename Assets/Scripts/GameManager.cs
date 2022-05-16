@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     public float CostTreeValue;//custo de dinheiro para plantar arvore
     public float TreeCarbonValue;//custo de carbono por arvore para remover
 
+    public float CostAnimalValue;//custo de dinheiro para criar animal
+    public float AnimalCarbonValue;//custo de carbono para criar animal
+
     public float DownTreeCarbon;//custo de carbono por derrubar arvore
 
 

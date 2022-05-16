@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class ButtonBehavior : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [Header("1- solo, 2- arvore")]
+    [Header("1- solo, 2- arvore, 3-Animal")]
     public int UnityType;
 
     public Text CarbonValueTxt;
@@ -24,6 +24,11 @@ public class ButtonBehavior : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         {
             CarbonValueTxt.text = GameManager.Instance.TreeCarbonValue.ToString() + " Kg CO2/Ano";
             MoneyValueTxt.text = GameManager.Instance.CostTreeValue.ToString()+" $";
+        }
+        if (UnityType == 3)
+        {
+            CarbonValueTxt.text = GameManager.Instance.AnimalCarbonValue.ToString() + " Kg CO2/Ano";
+            MoneyValueTxt.text = GameManager.Instance.CostAnimalValue.ToString() + " $";
         }
 
     }

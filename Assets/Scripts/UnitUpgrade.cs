@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrowPlant : MonoBehaviour
+public class UnitUpgrade : MonoBehaviour
 {
     public bool isReady = false;
 
@@ -10,7 +10,7 @@ public class GrowPlant : MonoBehaviour
     public GameObject TreeFinal;
 
    
-    [Header("0 -> plants | 1 -> trees")]
+    [Header("0 -> plants | 1 -> trees| 2 -> animal")]
     [Header("typeUnity")]
     public int typeUnity;
 
@@ -26,8 +26,11 @@ public class GrowPlant : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (typeUnity != 2)// se nao for animal
+        {
+            StartCoroutine(GrowCoroutine());
+        }
         
-        StartCoroutine(GrowCoroutine());
     }
 
     private void Update()

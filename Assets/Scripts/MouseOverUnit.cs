@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MouseOverUnit : MonoBehaviour
 {
-    GrowPlant myPlant;
+    UnitUpgrade myPlant;
 
     public GameObject Unit;
     bool isPanelAvcive = false;
@@ -12,7 +12,7 @@ public class MouseOverUnit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myPlant = Unit.GetComponent<GrowPlant>();//pega a referencia da unidade
+        myPlant = Unit.GetComponent<UnitUpgrade>();//pega a referencia da unidade
         painel = GetComponentInChildren<Canvas>().transform.GetChild(0).gameObject;
         painel.SetActive(isPanelAvcive); //desativa o painel
     }

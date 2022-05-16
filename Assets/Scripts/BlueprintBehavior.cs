@@ -47,13 +47,13 @@ public class BlueprintBehavior : MonoBehaviour
                 //Vector3 snapPosition = new Vector3(Mathf.RoundToInt(transform.position.x),transform.position.y,Mathf.RoundToInt(transform.position.z));
                 Instantiate(_PrefabUnit, transform.position, transform.rotation);
 
-                if (_PrefabUnit.GetComponent<GrowPlant>().typeUnity == 0)// pega a referencia do script growPlant e verifica que tipo de unidade e
+                if (_PrefabUnit.GetComponent<UnitUpgrade>().typeUnity == 0)// pega a referencia do script growPlant e verifica que tipo de unidade e
                 {
                     GameManager.Instance.addCarbon(GameManager.Instance.CostPlantatipnCarbon);// adicao de carbono qndo planta milho
                     GameManager.Instance.RemoveMoney(GameManager.Instance.CostPlantationValue);// remover dinheiro
                 }
 
-                if (_PrefabUnit.GetComponent<GrowPlant>().typeUnity == 1)// pega a referencia do script growPlant e verifica que tipo de unidade e
+                if (_PrefabUnit.GetComponent<UnitUpgrade>().typeUnity == 1)// pega a referencia do script growPlant e verifica que tipo de unidade e
                 {
                     GameManager.Instance.addCarbon(GameManager.Instance.TreeCarbonValue);// remocao de carbono qndo planta arvores
                     GameManager.Instance.RemoveMoney(GameManager.Instance.CostTreeValue);// remover dinheiro
