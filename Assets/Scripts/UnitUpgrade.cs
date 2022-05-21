@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class UnitUpgrade : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class UnitUpgrade : MonoBehaviour
     public GameObject TreeDown;
     public GameObject TreeFinal;
 
+
+    NavMeshAgent AnimalAgent;
     Animator animalAnim;
     public Transform[] GrassPosition;
 
@@ -36,18 +39,65 @@ public class UnitUpgrade : MonoBehaviour
         else // e um animal
         {
             animalAnim = transform.GetComponentInChildren<Animator>();
+            AnimalAgent = transform.GetComponentInChildren<NavMeshAgent>();
             //criar rotina de IA
+
+            StartCoroutine(AnimalAnimation());
+
         }
         
     }
 
     private void Update()
     {
-        Debug.Log(isReady);
+        //Debug.Log(isReady);
 
     }
 
+    IEnumerator AnimalAnimation()
+    {
+        while(true)
+        {
+            AnimalAgent.SetDestination(GrassPosition[Random.Range(0, GrassPosition.Length)].position);
 
+            yield return new WaitForSeconds(2);
+
+            /*
+            yield return new WaitForSeconds(Random.Range(2, 8));
+           
+            AnimalAgent.SetDestination(GrassPosition[Random.Range(0, GrassPosition.Length)].position);
+            Debug.Log(AnimalAgent.velocity);
+
+            if (AnimalAgent.velocity.magnitude <= 0)
+            {
+                AnimalEat();
+            }
+            else
+            {
+                 AnimalWalk();
+            }
+           */
+
+
+
+            //yield return new WaitForSeconds(2.5f);
+
+
+
+        }
+    }
+
+    private void AnimalEat()
+    {
+        //animalAnim.SetBool("cattle_eating", true);
+        //animalAnim.SetBool("cattle_walking", false);
+    }
+
+    private void AnimalWalk()
+    {
+        //animalAnim.SetBool("cattle_eating", false);
+        //animalAnim.SetBool("cattle_walking", true);
+    }
 
     IEnumerator GrowCoroutine()
     {
