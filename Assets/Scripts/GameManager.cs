@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -79,23 +80,30 @@ public class GameManager : MonoBehaviour
 
     int MainMenuOption;
 
+    
 
     private void Awake()
     {
+        isGameOver = false;
         menuCanvas.enabled = isMenuActive;
+        Instance = this;
+
+        /* remocao do singleton
         if (Instance != null && Instance != this)
         {
+
             Destroy(gameObject);
         }
         else
         {
             DontDestroyOnLoad(gameObject);
             Instance = this;
-        }
+        }*/
 
     }
     void Start()
     {
+
         GameOverPanel.SetActive(false);
 
         currentMoney = startMoney;
@@ -112,6 +120,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+     
+
         if (isGameOver == false)// verifica se o jogo terminou
         {
             menuCanvas.enabled = isMenuActive;
@@ -125,13 +135,23 @@ public class GameManager : MonoBehaviour
             LimitMoneyControll();
 
             checkGameOver();
-        }
-        else
-        {
-            GameOverPanel.SetActive(true);
+
+            if (isGameOver)
+            {
+                GameOverPanel.SetActive(true);
+            }
         }
 
+        
     }
+
+    public void resetGame()
+    {
+        GameOverPanel.SetActive(false);
+        
+        SceneManager.LoadScene("menu");    
+    }
+
 
 
     private void checkGameOver()
