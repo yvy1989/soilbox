@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// controle das unidades ex: solo arvores animais etc
+/// </summary>
 public class UnitUpgrade : MonoBehaviour
 {
     public bool isReady = false;
@@ -47,10 +50,19 @@ public class UnitUpgrade : MonoBehaviour
         }
         
     }
+    
+
+    
 
     private void Update()
     {
         //Debug.Log(isReady);
+        if (animalAnim != null)
+        {
+            animalAnim.SetFloat("speed", AnimalAgent.velocity.magnitude);
+            Debug.Log(AnimalAgent.velocity.magnitude);
+        }
+        
 
     }
 
@@ -62,42 +74,9 @@ public class UnitUpgrade : MonoBehaviour
 
             yield return new WaitForSeconds(2);
 
-            /*
-            yield return new WaitForSeconds(Random.Range(2, 8));
-           
-            AnimalAgent.SetDestination(GrassPosition[Random.Range(0, GrassPosition.Length)].position);
-            Debug.Log(AnimalAgent.velocity);
-
-            if (AnimalAgent.velocity.magnitude <= 0)
-            {
-                AnimalEat();
-            }
-            else
-            {
-                 AnimalWalk();
-            }
-           */
-
-
-
-            //yield return new WaitForSeconds(2.5f);
-
-
-
         }
     }
 
-    private void AnimalEat()
-    {
-        //animalAnim.SetBool("cattle_eating", true);
-        //animalAnim.SetBool("cattle_walking", false);
-    }
-
-    private void AnimalWalk()
-    {
-        //animalAnim.SetBool("cattle_eating", false);
-        //animalAnim.SetBool("cattle_walking", true);
-    }
 
     IEnumerator GrowCoroutine()
     {
