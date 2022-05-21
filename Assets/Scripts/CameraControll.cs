@@ -67,23 +67,23 @@ public class CameraControll : MonoBehaviour
 
     void Update()
     {
-        if (!GameManager.Instance.isMenuActive)
+        if (GameManager.Instance.isGameOver==false)// verifica se o jogo terminou
         {
+            MoveCam();
+            zoomScroll();
 
+
+            if (GameManager.Instance.status == GameManager.GameStatus.ManageTerrain) //gerenciamento de terreno velocidade mais lenta
+            {
+                velocidade = 0.2f;
+            }
+            if (GameManager.Instance.status == GameManager.GameStatus.selectTerrain || currentCamera == 0)// selecao de terreno velocidade mais rapida
+            {
+                velocidade = 2f;
+            }
         }
 
-        MoveCam();
-        zoomScroll();
 
-
-        if (GameManager.Instance.status == GameManager.GameStatus.ManageTerrain) //gerenciamento de terreno velocidade mais lenta
-        {
-            velocidade = 0.2f;
-        }
-        if (GameManager.Instance.status == GameManager.GameStatus.selectTerrain || currentCamera == 0)// selecao de terreno velocidade mais rapida
-        {
-            velocidade = 2f;
-        }
     }
 
     

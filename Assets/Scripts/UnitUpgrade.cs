@@ -70,9 +70,11 @@ public class UnitUpgrade : MonoBehaviour
     {
         while(true)
         {
-            AnimalAgent.SetDestination(GrassPosition[Random.Range(0, GrassPosition.Length)].position);
+            
 
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(Random.Range(8,15));
+
+            AnimalAgent.SetDestination(GrassPosition[Random.Range(0, GrassPosition.Length)].position);
 
         }
     }

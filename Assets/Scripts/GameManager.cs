@@ -8,6 +8,9 @@ using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject GameOverPanel;
+    public bool isGameOver = false; //controla so o jogo acabou
+
     public float CostPlantationValue; //custo de dinheiro para plantar
     public float CostPlantatipnCarbon;//custo de carbono para plantar
 
@@ -93,6 +96,8 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+        GameOverPanel.SetActive(false);
+
         currentMoney = startMoney;
         currentCarbon = startCarbon;
 
@@ -107,15 +112,34 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        menuCanvas.enabled = isMenuActive;
+        if (isGameOver == false)// verifica se o jogo terminou
+        {
+            menuCanvas.enabled = isMenuActive;
 
-        Clique();
+            Clique();
 
-        //Debug.Log(MainMenuOption);
-        UpdateCreditsValues();
+            //Debug.Log(MainMenuOption);
+            UpdateCreditsValues();
 
-        LimitCarbonControll();
-        LimitMoneyControll();
+            LimitCarbonControll();
+            LimitMoneyControll();
+
+            checkGameOver();
+        }
+        else
+        {
+            GameOverPanel.SetActive(true);
+        }
+
+    }
+
+
+    private void checkGameOver()
+    {
+        if(currentCarbon>=100 || currentMoney <= 0)
+        {
+            isGameOver = true;
+        }
     }
 
     private void LimitCarbonControll()// usado na barra de carbono
