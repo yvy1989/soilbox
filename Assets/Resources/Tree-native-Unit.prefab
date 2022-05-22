@@ -49,8 +49,9 @@ MonoBehaviour:
   isReady: 0
   TreeDown: {fileID: 1207462742838927396}
   TreeFinal: {fileID: 983843254878646215}
+  GrassPosition: []
   typeUnity: 1
-  MoneyReward: -10
+  MoneyReward: 10
   levelsCount: 1
   CurrentlevelsCount: 0
   Plant_final_stage: 0

@@ -32550,6 +32550,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7146420395663852897}
   - component: {fileID: 6834207203292143736}
+  - component: {fileID: 505092502961878710}
   m_Layer: 6
   m_Name: Plantacao-1-Unit
   m_TagString: Untagged
@@ -32592,12 +32593,26 @@ MonoBehaviour:
   isReady: 0
   TreeDown: {fileID: 0}
   TreeFinal: {fileID: 0}
+  GrassPosition: []
   typeUnity: 0
   MoneyReward: 25
   levelsCount: 3
   CurrentlevelsCount: 0
   Plant_final_stage: 0
   sizePlantDuration: 5
+--- !u!65 &505092502961878710
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7160678565809388818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 6.1617994, y: 2.1705475, z: 6.326169}
+  m_Center: {x: 0, y: 0.58527386, z: 0}
 --- !u!1 &7166815393158175958
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,8 @@ using UnityEngine;
 
 public class BlueprintBehavior : MonoBehaviour
 {
+    public UnitUpgrade hasUnity = null;
+
     RaycastHit hit;
     Vector3 movePoint;
     public Vector3 GridSizeToSnap;
