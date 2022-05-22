@@ -10,7 +10,7 @@ using UnityEngine;
 
 public class BlueprintBehavior : MonoBehaviour
 {
-    public UnitUpgrade hasUnity = null;
+    public MouseOverUnit hasUnity = null;
 
     RaycastHit hit;
     Vector3 movePoint;
