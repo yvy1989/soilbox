@@ -9,6 +9,16 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public Text TimeUI;
+    public float CurrentTimer;
+    public int hour = 0;
+    public int minutes = 0;
+    public int seconds = 0;
+    public int milliseconds =0;
+
+    public Text TextRankUI;
+
+
     public GameObject GameOverPanel;
     public bool isGameOver = false; //controla so o jogo acabou
 
@@ -113,22 +123,21 @@ public class GameManager : MonoBehaviour
         ConfirmationMenu.SetActive(false);
         InfoMenu.SetActive(false);
 
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
-     
+        
 
         if (isGameOver == false)// verifica se o jogo terminou
         {
+            GameTime();
+
             menuCanvas.enabled = isMenuActive;
 
             Clique();
 
-            //Debug.Log(MainMenuOption);
             UpdateCreditsValues();
 
             LimitCarbonControll();
@@ -139,10 +148,28 @@ public class GameManager : MonoBehaviour
             if (isGameOver)
             {
                 GameOverPanel.SetActive(true);
+                TextRankUI.text = hour.ToString("00") + " horas " + minutes.ToString("00") + " minutos e " + seconds.ToString("00")+" segundos";
             }
         }
 
-        
+
+    }
+
+    private void GameTime()
+    {
+        CurrentTimer += Time.deltaTime;
+
+        minutes = Mathf.FloorToInt((CurrentTimer / 60F) % 60F);
+        seconds = Mathf.FloorToInt(CurrentTimer % 60F);
+        milliseconds = Mathf.FloorToInt((CurrentTimer * 100F) % 100F);
+
+        if (minutes >= 59)
+        {
+            hour++;
+        }
+
+
+        TimeUI.text = hour.ToString("00") + ":" + minutes.ToString("00") + ":" + seconds.ToString("00");
     }
 
     public void resetGame()
