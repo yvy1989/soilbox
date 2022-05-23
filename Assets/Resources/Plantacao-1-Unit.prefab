@@ -32592,7 +32592,6 @@ MonoBehaviour:
   isReady: 0
   TreeDown: {fileID: 0}
   TreeFinal: {fileID: 0}
-  GrassPosition: []
   typeUnity: 0
   MoneyReward: 25
   levelsCount: 3
