@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc232162b346ecf48a705ed769c55a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  estaNoTerreno: 1
+  isOnTerrain: 1
   isReady: 0
   TreeDown: {fileID: 1207462742838927396}
   TreeFinal: {fileID: 983843254878646215}

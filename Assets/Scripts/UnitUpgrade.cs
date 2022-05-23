@@ -8,9 +8,9 @@ using UnityEngine.AI;
 /// </summary>
 public class UnitUpgrade : MonoBehaviour
 {
-    public bool estaNoTerreno = false;//////////////////////////////////////////////////////T
+    public bool isOnTerrain = false;// variavel q verifica se a unidade ja esta no terreno
 
-    public bool isReady = false;
+    public bool isReady = false;//variavel q verifica se a unidade ja esta pronta p colher ou derrubar
 
     public GameObject TreeDown;
     public GameObject TreeFinal;

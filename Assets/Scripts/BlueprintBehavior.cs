@@ -42,19 +42,17 @@ public class BlueprintBehavior : MonoBehaviour
                                                Mathf.RoundToInt(hit.point.z / GridSizeToSnap.z) * GridSizeToSnap.z);
             transform.position = snapPosition;
         }
-        /////////////////////////////////////////////////////////////////////////////////////T
+
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, (1 << 7)))//1<<7 unit
         {
             unit = hit.transform.GetComponent<UnitUpgrade>();
-            Debug.Log(unit.typeUnity);
-            canAdd = !unit.estaNoTerreno;
+            canAdd = !unit.isOnTerrain;
         }
         else
         {
-            Debug.Log("vasio");
             canAdd = true;
         }
-        /////////////////////////////////////////////////////////////////////////////////////T
+
 
 
         if (Input.GetMouseButton(0) && canAdd)//clicou com o esquerdo do mouse
@@ -64,7 +62,7 @@ public class BlueprintBehavior : MonoBehaviour
             if (_PrefabUnit != null)
             {
 
-                _PrefabUnit.GetComponent<UnitUpgrade>().estaNoTerreno = true;
+                _PrefabUnit.GetComponent<UnitUpgrade>().isOnTerrain = true;
                 Instantiate(_PrefabUnit, transform.position, transform.rotation);
 
                 
