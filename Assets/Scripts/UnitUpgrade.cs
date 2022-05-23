@@ -8,6 +8,8 @@ using UnityEngine.AI;
 /// </summary>
 public class UnitUpgrade : MonoBehaviour
 {
+    public bool estaNoTerreno = false;//////////////////////////////////////////////////////T
+
     public bool isReady = false;
 
     public GameObject TreeDown;

@@ -10,9 +10,14 @@ using UnityEngine;
 
 public class BlueprintBehavior : MonoBehaviour
 {
+    bool canAdd = false;
+
+    UnitUpgrade unit = null;
     RaycastHit hit;
     Vector3 movePoint;
     public Vector3 GridSizeToSnap;
+    MouseOverUnit m; // variavel temporaria para saber verificar se posso adicionar unidades ao terreno
+
     //public GameObject prefab;
 
     public string unitName;/////////////////////////!!!!!!!!!!! IMPORTANTE o mesmo nome do asset na pasta Resources via inspector
@@ -37,15 +42,32 @@ public class BlueprintBehavior : MonoBehaviour
                                                Mathf.RoundToInt(hit.point.z / GridSizeToSnap.z) * GridSizeToSnap.z);
             transform.position = snapPosition;
         }
-
-        if (Input.GetMouseButton(0))//clicou com o esquerdo do mouse
+        /////////////////////////////////////////////////////////////////////////////////////T
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, (1 << 7)))//1<<7 unit
         {
+            unit = hit.transform.GetComponent<UnitUpgrade>();
+            Debug.Log(unit.typeUnity);
+            canAdd = !unit.estaNoTerreno;
+        }
+        else
+        {
+            Debug.Log("vasio");
+            canAdd = true;
+        }
+        /////////////////////////////////////////////////////////////////////////////////////T
+
+
+        if (Input.GetMouseButton(0) && canAdd)//clicou com o esquerdo do mouse
+        {
+            //m.isAvaiable = true;//teste
+
             if (_PrefabUnit != null)
             {
-                //Instantiate(prefab, transform.position, transform.rotation);
-                //GameObject g = Instantiate(Resources.Load($"Prefabs/{unitName}"), transform.position, transform.rotation) as GameObject;
-                //Vector3 snapPosition = new Vector3(Mathf.RoundToInt(transform.position.x),transform.position.y,Mathf.RoundToInt(transform.position.z));
+
+                _PrefabUnit.GetComponent<UnitUpgrade>().estaNoTerreno = true;
                 Instantiate(_PrefabUnit, transform.position, transform.rotation);
+
+                
 
                 if (_PrefabUnit.GetComponent<UnitUpgrade>().typeUnity == 0)// pega a referencia do script growPlant e verifica que tipo de unidade e
                 {
@@ -59,9 +81,6 @@ public class BlueprintBehavior : MonoBehaviour
                     GameManager.Instance.RemoveMoney(GameManager.Instance.CostTreeValue);// remover dinheiro
                 }
 
-
-
-                //Instantiate(_PrefabUnit, snapPosition, transform.rotation);
                 Destroy(gameObject);
             }
 

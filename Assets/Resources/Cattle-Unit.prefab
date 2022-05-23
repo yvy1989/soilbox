@@ -136,7 +136,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5927733802844054764}
   - component: {fileID: -4219053286232027712}
-  m_Layer: 0
+  - component: {fileID: 6174740467641037761}
+  m_Layer: 7
   m_Name: Cattle-Unit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc232162b346ecf48a705ed769c55a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  estaNoTerreno: 0
   isReady: 1
   TreeDown: {fileID: 0}
   TreeFinal: {fileID: 0}
@@ -190,6 +192,19 @@ MonoBehaviour:
   CurrentlevelsCount: 0
   Plant_final_stage: 0
   sizePlantDuration: 0
+--- !u!65 &6174740467641037761
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6387294052139420951}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.176775, y: 0.36764687, z: 6.1103706}
+  m_Center: {x: 0, y: 0.17299005, z: 0}
 --- !u!1 &7043475116057333938
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,6 +675,14 @@ PrefabInstance:
       propertyPath: Unit
       value: 
       objectReference: {fileID: 6387294052139420951}
+    - target: {fileID: -2130813666197088483, guid: 9952628faa3a4c649ab0439facdee42a, type: 3}
+      propertyPath: isAvaiable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2130813666197088483, guid: 9952628faa3a4c649ab0439facdee42a, type: 3}
+      propertyPath: isInTerrain
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272457469230647818, guid: 9952628faa3a4c649ab0439facdee42a, type: 3}
       propertyPath: m_Name
       value: Select

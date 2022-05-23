@@ -32550,7 +32550,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7146420395663852897}
   - component: {fileID: 6834207203292143736}
-  m_Layer: 6
+  - component: {fileID: 1008617749279838645}
+  m_Layer: 7
   m_Name: Plantacao-1-Unit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32589,15 +32590,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc232162b346ecf48a705ed769c55a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  estaNoTerreno: 0
   isReady: 0
   TreeDown: {fileID: 0}
   TreeFinal: {fileID: 0}
+  GrassPosition: []
   typeUnity: 0
   MoneyReward: 25
   levelsCount: 3
   CurrentlevelsCount: 0
   Plant_final_stage: 0
   sizePlantDuration: 5
+--- !u!65 &1008617749279838645
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7160678565809388818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.105732, y: 0.638894, z: 6.1741333}
+  m_Center: {x: 0, y: 0.03009215, z: 0}
 --- !u!1 &7166815393158175958
 GameObject:
   m_ObjectHideFlags: 0
@@ -43455,6 +43471,14 @@ PrefabInstance:
       propertyPath: Unit
       value: 
       objectReference: {fileID: 7160678565809388818}
+    - target: {fileID: -2130813666197088483, guid: 9952628faa3a4c649ab0439facdee42a, type: 3}
+      propertyPath: isAvaiable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2130813666197088483, guid: 9952628faa3a4c649ab0439facdee42a, type: 3}
+      propertyPath: isInTerrain
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272457469230647818, guid: 9952628faa3a4c649ab0439facdee42a, type: 3}
       propertyPath: m_Name
       value: Select
