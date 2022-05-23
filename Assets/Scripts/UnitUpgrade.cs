@@ -21,7 +21,7 @@ public class UnitUpgrade : MonoBehaviour
     public Transform[] GrassPosition;
 
    
-    [Header("0 -> plants | 1 -> trees| 2 -> animal")]
+    [Header("0 -> plants | 1 -> trees| 2 -> animal | 3-> outros")]
     [Header("typeUnity")]
     public int typeUnity;
 
@@ -37,11 +37,11 @@ public class UnitUpgrade : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (typeUnity != 2)// se nao for animal
+        if (typeUnity == 0 || typeUnity == 1)// se nao for animal
         {
             StartCoroutine(GrowCoroutine());
         }
-        else // e um animal
+        if (typeUnity == 2 )// e um animal
         {
             animalAnim = transform.GetComponentInChildren<Animator>();
             AnimalAgent = transform.GetComponentInChildren<NavMeshAgent>();
@@ -50,7 +50,12 @@ public class UnitUpgrade : MonoBehaviour
             StartCoroutine(AnimalAnimation());
 
         }
-        
+        if (typeUnity == 3)// outros
+        {
+            //TODO
+
+        }
+
     }
     
 
