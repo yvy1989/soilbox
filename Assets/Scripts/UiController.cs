@@ -10,6 +10,9 @@ public class UiController : MonoBehaviour
     public Image RedCarbonAmount;
     public Image GreenCarbonAmount;
 
+    public Image CurrentStorageAmount;
+    public Image FinalStorageAmount;
+
     float fillMoney;
     float fillCarbon;
 
@@ -25,6 +28,8 @@ public class UiController : MonoBehaviour
         TimeUI.text = GameManager.Instance.hour.ToString("00") + ":" + GameManager.Instance.minutes.ToString("00") + ":" + GameManager.Instance.seconds.ToString("00");
 
         fillMoney =  GameManager.Instance.currentMoney / GameManager.Instance.MaxMoney;
+
+        FinalStorageAmount.fillAmount = GameManager.Instance.finalStorage/100;
 
         CreditAmount.fillAmount = fillMoney;
 

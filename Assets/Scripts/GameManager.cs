@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
 
     public float DownTreeCarbon;//custo de carbono por derrubar arvore
 
+    public float initialStorage, currentStorage, finalStorage;
+
 
     public event Action<int,bool> OnManageSoilwhithId;
     public event Action<int> OnChangeCamera;
