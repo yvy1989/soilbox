@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public Text TimeUI;
+    //public Text TimeUI;
     public float CurrentTimer;
     public int hour = 0;
     public int minutes = 0;
@@ -169,7 +169,7 @@ public class GameManager : MonoBehaviour
         }
 
 
-        TimeUI.text = hour.ToString("00") + ":" + minutes.ToString("00") + ":" + seconds.ToString("00");
+        //TimeUI.text = hour.ToString("00") + ":" + minutes.ToString("00") + ":" + seconds.ToString("00");
     }
 
     public void resetGame()

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UiController : MonoBehaviour
 {
+    public Text TimeUI;
     public Image CreditAmount;
     public Image RedCarbonAmount;
     public Image GreenCarbonAmount;
@@ -21,6 +22,8 @@ public class UiController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        TimeUI.text = GameManager.Instance.hour.ToString("00") + ":" + GameManager.Instance.minutes.ToString("00") + ":" + GameManager.Instance.seconds.ToString("00");
+
         fillMoney =  GameManager.Instance.currentMoney / GameManager.Instance.MaxMoney;
 
         CreditAmount.fillAmount = fillMoney;
