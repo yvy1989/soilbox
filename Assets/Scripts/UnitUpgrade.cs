@@ -114,7 +114,7 @@ public class UnitUpgrade : MonoBehaviour
         }
     }
 
-    public void downTree()
+    public void downUnit()
     {
         TreeFinal.SetActive(false);
         TreeDown.SetActive(true);

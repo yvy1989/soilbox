@@ -51,7 +51,7 @@ public class MouseOverUnit : MonoBehaviour
             if (myUnit.typeUnity == 1)// se for arvore
             {
                 painel.SetActive(false);
-                myUnit.downTree();
+                myUnit.downUnit();
                 Invoke("waitToDownTree", 4f);// espera 4 segundos antes de destruir a arvore
                 GameManager.Instance.addCarbon(GameManager.Instance.DownTreeCarbon);// da dano de carbono por derrubar arvore;
             }
@@ -59,7 +59,7 @@ public class MouseOverUnit : MonoBehaviour
             if (myUnit.typeUnity == 3)// se for um objeto ex: celeiro
             {
                 painel.SetActive(false);
-                myUnit.downTree();
+                myUnit.downUnit();
                 Invoke("waitToDownTree", 4f);// espera 4 segundos antes de destruir
 
             }
