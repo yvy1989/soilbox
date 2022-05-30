@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class UiController : MonoBehaviour
 {
+ 
+
     public Text TimeUI;
     public Image CreditAmount;
     public Image RedCarbonAmount;
@@ -12,6 +14,9 @@ public class UiController : MonoBehaviour
 
     public Image CurrentStorageAmount;
     public Image FinalStorageAmount;
+
+    public Text currentStorageTxt;
+    public Text finalStorageTxt;
 
     float fillMoney;
     float fillCarbon;
@@ -25,21 +30,34 @@ public class UiController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TimeUI.text = GameManager.Instance.hour.ToString("00") + ":" + GameManager.Instance.minutes.ToString("00") + ":" + GameManager.Instance.seconds.ToString("00");
+        TimeUiUpdate();
+        MoneyUiUpdate();
+        CarbonUiUpdate();
 
-        fillMoney =  GameManager.Instance.currentMoney / GameManager.Instance.MaxMoney;
+        StorageUiUpdate();
 
-        FinalStorageAmount.fillAmount = GameManager.Instance.finalStorage/100;
+    }
 
-        CreditAmount.fillAmount = fillMoney;
+    private void StorageUiUpdate()
+    {
+        currentStorageTxt.text = GameManager.Instance.currentStorage.ToString();
+        finalStorageTxt.text = GameManager.Instance.finalStorage.ToString();
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        
+        FinalStorageAmount.fillAmount = GameManager.Instance.finalStorage / 100;
+
+        if (GameManager.Instance.currentStorage <= GameManager.Instance.finalStorage)
+        {
+            CurrentStorageAmount.fillAmount = GameManager.Instance.currentStorage / 100;
+        }
+    }
+
+    private void CarbonUiUpdate()
+    {
         float currCarb = GameManager.Instance.currentCarbon;
 
         //Debug.Log(currCarb / -100);
 
-        
+
 
         if (currCarb >= 0) //vermelho
         {
@@ -50,6 +68,16 @@ public class UiController : MonoBehaviour
             GreenCarbonAmount.fillAmount = (currCarb / -100);
 
         }
+    }
 
+    private void MoneyUiUpdate()
+    {
+        fillMoney = GameManager.Instance.currentMoney / GameManager.Instance.MaxMoney;
+        CreditAmount.fillAmount = fillMoney;
+    }
+
+    private void TimeUiUpdate()
+    {
+        TimeUI.text = GameManager.Instance.hour.ToString("00") + ":" + GameManager.Instance.minutes.ToString("00") + ":" + GameManager.Instance.seconds.ToString("00");
     }
 }

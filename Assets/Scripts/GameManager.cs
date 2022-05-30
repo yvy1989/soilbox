@@ -121,6 +121,8 @@ public class GameManager : MonoBehaviour
         currentMoney = startMoney;
         currentCarbon = startCarbon;
 
+        currentStorage = initialStorage;
+
         status = GameStatus.selectTerrain;
         ConfirmationMenu.SetActive(false);
         InfoMenu.SetActive(false);
@@ -144,17 +146,30 @@ public class GameManager : MonoBehaviour
 
             LimitCarbonControll();
             LimitMoneyControll();
+            
+            LimitStorageAmount();
 
             checkGameOver();
+            
 
             if (isGameOver)
             {
                 GameOverPanel.SetActive(true);
-                TextRankUI.text = hour.ToString("00") + " horas " + minutes.ToString("00") + " minutos e " + seconds.ToString("00")+" segundos";
+                TextRankUI.text = hour.ToString("00") + " horas " + minutes.ToString("00") + " minutos e " + seconds.ToString("00") + " segundos";
             }
         }
 
 
+
+
+    }
+
+    private void LimitStorageAmount()
+    {
+        if (currentStorage >= finalStorage)
+        {
+            currentStorage = finalStorage;
+        }
     }
 
     private void GameTime()
