@@ -467,6 +467,8 @@ MonoBehaviour:
   GreenCarbonAmount: {fileID: 1467005858}
   CurrentStorageAmount: {fileID: 1116084920}
   FinalStorageAmount: {fileID: 1238329200}
+  currentStorageTxt: {fileID: 468057285}
+  finalStorageTxt: {fileID: 1880495306}
 --- !u!4 &137945863
 Transform:
   m_ObjectHideFlags: 0
@@ -1100,7 +1102,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 255, y: -374}
+  m_AnchoredPosition: {x: 255, y: -361.1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &248310830
@@ -1936,7 +1938,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -427.3, y: -32.09996}
+  m_AnchoredPosition: {x: -393.1, y: -36.3}
   m_SizeDelta: {x: 24.641, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &419005851
@@ -2148,8 +2150,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -465.68964, y: -32.09996}
-  m_SizeDelta: {x: 71.126, y: 30}
+  m_AnchoredPosition: {x: -457.90628, y: -37.7}
+  m_SizeDelta: {x: 103.015, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &468057285
 MonoBehaviour:
@@ -2178,7 +2180,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -2362,7 +2364,7 @@ GameObject:
   - component: {fileID: 510909106}
   - component: {fileID: 510909105}
   m_Layer: 5
-  m_Name: barra (1)
+  m_Name: storageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2384,7 +2386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -427.52, y: -71}
+  m_AnchoredPosition: {x: -410, y: -71}
   m_SizeDelta: {x: 145.898, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &510909105
@@ -5249,7 +5251,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -435.2, y: 358.24677}
+  m_AnchoredPosition: {x: -407.20004, y: 358.24677}
   m_SizeDelta: {x: 3312.603, y: 196}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1116084920
@@ -5818,7 +5820,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 89.992}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -435, y: 356.292}
+  m_AnchoredPosition: {x: -407, y: 356.292}
   m_SizeDelta: {x: 3502.174, y: 238.55798}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1238329200
@@ -6685,21 +6687,24 @@ MonoBehaviour:
   TextRankUI: {fileID: 1498517490}
   GameOverPanel: {fileID: 939934689}
   isGameOver: 0
-  CostPlantationValue: 50
+  CostPlantationValue: 5
   CostPlantatipnCarbon: 0.56
+  StoragePlantFill: 0.3
   CostTreeValue: 10
   TreeCarbonValue: -10
+  StorageTreeFill: 0.5
   CostAnimalValue: 10
   AnimalCarbonValue: -5
   DownTreeCarbon: 10
   initialStorage: 10
   currentStorage: 0
   finalStorage: 25
+  CostStorageValue: 10
   status: 0
   myTerrains: []
   TempTerrain: {fileID: 0}
   isMenuActive: 0
-  startMoney: 300
+  startMoney: 1500
   currentMoney: 0
   MaxMoney: 50000
   startCarbon: 0
@@ -8615,8 +8620,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -396.3, y: -32.1}
-  m_SizeDelta: {x: 71.833, y: 30}
+  m_AnchoredPosition: {x: -339.033, y: -37.5}
+  m_SizeDelta: {x: 105.445, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1880495306
 MonoBehaviour:
@@ -8645,7 +8650,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -9644,7 +9649,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -436.2, y: 21}
+  m_AnchoredPosition: {x: -408.20004, y: 21}
   m_SizeDelta: {x: 395, y: 402}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2019507870

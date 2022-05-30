@@ -114,7 +114,7 @@ public class UnitUpgrade : MonoBehaviour
         }
     }
 
-    public void downUnit()
+    public void downUnit()// colher ou derrubar
     {
         TreeFinal.SetActive(false);
         TreeDown.SetActive(true);

@@ -48,13 +48,37 @@ public class MouseOverUnit : MonoBehaviour
     {
         if (myUnit.isReady)//se a plante estiver pronta p colher ou derrubar
         {
+
+            if (myUnit.typeUnity == 0)// se for planta
+            {
+                if (GameManager.Instance.currentStorage <= GameManager.Instance.finalStorage)
+                {
+                    painel.SetActive(false);
+                    Destroy(Unit);
+
+                    GameManager.Instance.addMoney(myUnit.MoneyReward);// por enquanto tanto arvore qnto planta usam a mesma variavel
+                    GameManager.Instance.fillStorage(GameManager.Instance.StoragePlantFill);// valor de armazenamento de plantas
+                }
+                else
+                {
+                    GameManager.Instance.ShowInfo("armazem cheio");
+                }
+                
+            }
+
+
             if (myUnit.typeUnity == 1)// se for arvore
             {
                 painel.SetActive(false);
                 myUnit.downUnit();
                 Invoke("waitToDownTree", 4f);// espera 4 segundos antes de destruir a arvore
                 GameManager.Instance.addCarbon(GameManager.Instance.DownTreeCarbon);// da dano de carbono por derrubar arvore;
+
+                GameManager.Instance.addMoney(myUnit.MoneyReward);// por enquanto tanto arvore qnto planta usam a mesma variavel
+                GameManager.Instance.fillStorage(GameManager.Instance.StorageTreeFill);// valor de armazenamento de arvores
             }
+
+
 
             if (myUnit.typeUnity == 3)// se for um objeto ex: celeiro
             {
@@ -63,13 +87,14 @@ public class MouseOverUnit : MonoBehaviour
                 Invoke("waitToDownTree", 4f);// espera 4 segundos antes de destruir
 
             }
+            /*
             else// se nao for arvore
             {           
                 painel.SetActive(false);
                 Destroy(Unit);
-            }
+            }*/
 
-            GameManager.Instance.addMoney(myUnit.MoneyReward);// por enquanto tanto arvore qnto planta usam a mesma variavel
+            
 
             //GameManager.Instance.CostPlantatipnCarbon;
 

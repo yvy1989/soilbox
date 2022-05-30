@@ -67,16 +67,25 @@ public class BlueprintBehavior : MonoBehaviour
 
                 
 
-                if (_PrefabUnit.GetComponent<UnitUpgrade>().typeUnity == 0)// pega a referencia do script growPlant e verifica que tipo de unidade e
+                if (_PrefabUnit.GetComponent<UnitUpgrade>().typeUnity == 0)// se for planta
                 {
                     GameManager.Instance.addCarbon(GameManager.Instance.CostPlantatipnCarbon);// adicao de carbono qndo planta milho
                     GameManager.Instance.RemoveMoney(GameManager.Instance.CostPlantationValue);// remover dinheiro
+
                 }
 
-                if (_PrefabUnit.GetComponent<UnitUpgrade>().typeUnity == 1)// pega a referencia do script growPlant e verifica que tipo de unidade e
+                if (_PrefabUnit.GetComponent<UnitUpgrade>().typeUnity == 1)// se for arvore
                 {
                     GameManager.Instance.addCarbon(GameManager.Instance.TreeCarbonValue);// remocao de carbono qndo planta arvores
                     GameManager.Instance.RemoveMoney(GameManager.Instance.CostTreeValue);// remover dinheiro
+
+                }
+
+                if (_PrefabUnit.GetComponent<UnitUpgrade>().typeUnity == 3)// se for celeiro
+                {
+                    
+                    GameManager.Instance.upGradeStorage(25f);// atualiza o storage em 25 unidades
+                    GameManager.Instance.RemoveMoney(GameManager.Instance.CostStorageValue);// remover dinheiro
                 }
 
                 Destroy(gameObject);

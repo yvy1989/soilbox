@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    //public Text TimeUI;
+    [Header("Tempo")]
     public float CurrentTimer;
     public int hour = 0;
     public int minutes = 0;
@@ -22,20 +22,26 @@ public class GameManager : MonoBehaviour
     public GameObject GameOverPanel;
     public bool isGameOver = false; //controla so o jogo acabou
 
+    [Header("Plantas")]
     public float CostPlantationValue; //custo de dinheiro para plantar
     public float CostPlantatipnCarbon;//custo de carbono para plantar
+    public float StoragePlantFill;//custo de storage para colher
 
 
+    [Header("Arvore")]
     public float CostTreeValue;//custo de dinheiro para plantar arvore
     public float TreeCarbonValue;//custo de carbono por arvore para remover
+    public float StorageTreeFill;//custo de storage para madeira arvore
 
+
+    [Header("Animal")]
     public float CostAnimalValue;//custo de dinheiro para criar animal
     public float AnimalCarbonValue;//custo de carbono para criar animal
-
     public float DownTreeCarbon;//custo de carbono por derrubar arvore
 
+    [Header("Armazem")]
     public float initialStorage, currentStorage, finalStorage;
-
+    public float CostStorageValue;//custo de dinheiro para criar um celeiro/silo
 
     public event Action<int,bool> OnManageSoilwhithId;
     public event Action<int> OnChangeCamera;
@@ -45,7 +51,8 @@ public class GameManager : MonoBehaviour
         selectTerrain, ManageTerrain, GameOver, Win
     }
 
-    public GameStatus status;//////////////////////////////////////<<<<<<<<<<<===================================RETIRAR O A===========================================
+    [Header("Game Status")]
+    public GameStatus status;
 
     public List<GameObject> myTerrains; //lista que guarda seus terrenos
     public GameObject TempTerrain; // terreno temporario q vai ser usado no raycast
@@ -58,10 +65,13 @@ public class GameManager : MonoBehaviour
 
     public bool isMenuActive = false; //esconder o canvas
 
+    [Header("Dinheiro")]
     public float startMoney;
     public float currentMoney;// MEU DINHEIRO ATUAL
     public float MaxMoney;
 
+
+    [Header("Carbono")]
     public float startCarbon;
     public float currentCarbon;
     public float maxCarbon;
@@ -424,10 +434,35 @@ public class GameManager : MonoBehaviour
         ConfirmationMenu.SetActive(false);
     }
 
+    public void upGradeStorage(float amount)
+    {
+        if (finalStorage < 100)// para nao ultrapassar o limite do deposito
+        {
+            finalStorage += amount;
+        }
+        
+    }
+
+    public void fillStorage(float amount)
+    {
+        if (currentStorage < finalStorage)//verifica se o meu deposito nao esta cheio
+        {
+            Debug.Log("entrou");
+            currentStorage += amount;
+        }
+        else// caso contrario mandar msg erro
+        {
+            ShowInfo("deposito cheio, crie mais celeiros");
+        }
+    }
+
+
     public void addCarbon(float amount)
     {
         currentCarbon += amount;
     }
+
+
 
     public void RemoveCarbon(float amount)
     {
