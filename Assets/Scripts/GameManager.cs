@@ -447,7 +447,7 @@ public class GameManager : MonoBehaviour
     {
         if (currentStorage < finalStorage)//verifica se o meu deposito nao esta cheio
         {
-            Debug.Log("entrou");
+
             currentStorage += amount;
         }
         else// caso contrario mandar msg erro

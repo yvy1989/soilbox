@@ -51,7 +51,7 @@ public class MouseOverUnit : MonoBehaviour
 
             if (myUnit.typeUnity == 0)// se for planta
             {
-                if (GameManager.Instance.currentStorage <= GameManager.Instance.finalStorage)
+                if (GameManager.Instance.currentStorage < GameManager.Instance.finalStorage)
                 {
                     painel.SetActive(false);
                     Destroy(Unit);
@@ -69,13 +69,21 @@ public class MouseOverUnit : MonoBehaviour
 
             if (myUnit.typeUnity == 1)// se for arvore
             {
-                painel.SetActive(false);
-                myUnit.downUnit();
-                Invoke("waitToDownTree", 4f);// espera 4 segundos antes de destruir a arvore
-                GameManager.Instance.addCarbon(GameManager.Instance.DownTreeCarbon);// da dano de carbono por derrubar arvore;
+                if (GameManager.Instance.currentStorage < GameManager.Instance.finalStorage)
+                {
+                    painel.SetActive(false);
+                    myUnit.downUnit();
+                    Invoke("waitToDownTree", 4f);// espera 4 segundos antes de destruir a arvore
+                    GameManager.Instance.addCarbon(GameManager.Instance.DownTreeCarbon);// da dano de carbono por derrubar arvore;
 
-                GameManager.Instance.addMoney(myUnit.MoneyReward);// por enquanto tanto arvore qnto planta usam a mesma variavel
-                GameManager.Instance.fillStorage(GameManager.Instance.StorageTreeFill);// valor de armazenamento de arvores
+                    GameManager.Instance.addMoney(myUnit.MoneyReward);// por enquanto tanto arvore qnto planta usam a mesma variavel
+                    GameManager.Instance.fillStorage(GameManager.Instance.StorageTreeFill);// valor de armazenamento de arvores
+                }
+                else
+                {
+                    GameManager.Instance.ShowInfo("armazem cheio");
+                }
+                
             }
 
 
