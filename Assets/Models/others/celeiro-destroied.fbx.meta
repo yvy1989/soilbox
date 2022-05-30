@@ -3,7 +3,47 @@ guid: cbc551e4788605e4389a8d4f230d3d1e
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: branco
+    second: {fileID: 2100000, guid: cec34d9018d7a204a8cf5ed0d205d608, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cinza-moinho
+    second: {fileID: 2100000, guid: 9b453eb8dc023bb46a142ea21fbb52a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: laranja-moinho
+    second: {fileID: 2100000, guid: f13802842b20e644e87c9c1dddaa97a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: preto
+    second: {fileID: 2100000, guid: 6b752ec64803e3b4a82c1bfe658fde5d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: terra.001
+    second: {fileID: 2100000, guid: 87214af9bd608964d8d38365d4969d3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: terra2.001
+    second: {fileID: 2100000, guid: 63abae08ed564c3428ffe5dc77b46add, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vermelho
+    second: {fileID: 2100000, guid: bae39457e6c41ad478c21fe519c812d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vermelho-moinho
+    second: {fileID: 2100000, guid: fe5daed322ce7954eb0ed71a95f325da, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MouseOverUnit : MonoBehaviour
 {
-    UnitUpgrade myPlant;
+    UnitUpgrade myUnit;
 
     public GameObject Unit;
     bool isPanelAvcive = false;
@@ -12,7 +12,7 @@ public class MouseOverUnit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myPlant = Unit.GetComponent<UnitUpgrade>();//pega a referencia da unidade
+        myUnit = Unit.GetComponent<UnitUpgrade>();//pega a referencia da unidade
         painel = GetComponentInChildren<Canvas>().transform.GetChild(0).gameObject;
         painel.SetActive(isPanelAvcive); //desativa o painel
     }
@@ -46,14 +46,22 @@ public class MouseOverUnit : MonoBehaviour
 
     public void colher()
     {
-        if (myPlant.isReady)//se a plante estiver pronta p colher ou derrubar
+        if (myUnit.isReady)//se a plante estiver pronta p colher ou derrubar
         {
-            if (myPlant.typeUnity == 1)// se for arvore
+            if (myUnit.typeUnity == 1)// se for arvore
             {
                 painel.SetActive(false);
-                myPlant.downTree();
+                myUnit.downTree();
                 Invoke("waitToDownTree", 4f);// espera 4 segundos antes de destruir a arvore
                 GameManager.Instance.addCarbon(GameManager.Instance.DownTreeCarbon);// da dano de carbono por derrubar arvore;
+            }
+
+            if (myUnit.typeUnity == 3)// se for um objeto ex: celeiro
+            {
+                painel.SetActive(false);
+                myUnit.downTree();
+                Invoke("waitToDownTree", 4f);// espera 4 segundos antes de destruir
+
             }
             else// se nao for arvore
             {           
@@ -61,7 +69,7 @@ public class MouseOverUnit : MonoBehaviour
                 Destroy(Unit);
             }
 
-            GameManager.Instance.addMoney(myPlant.MoneyReward);// por enquanto tanto arvore qnto planta usam a mesma variavel
+            GameManager.Instance.addMoney(myUnit.MoneyReward);// por enquanto tanto arvore qnto planta usam a mesma variavel
 
             //GameManager.Instance.CostPlantatipnCarbon;
 
