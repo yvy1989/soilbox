@@ -6,6 +6,9 @@ ModelImporter:
   - first:
       74: 1552418335404474868
     second: moinho.001|moinho.001Action
+  - first:
+      74: 6724955444068490294
+    second: moinho.001|pa-moinho
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -75,8 +78,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: moinho.001|moinho.001Action
-      takeName: moinho.001|moinho.001Action
+      name: moinho.001|pa-moinho
+      takeName: moinho.001|pa-moinho
       internalID: 0
       firstFrame: 0
       lastFrame: 64
