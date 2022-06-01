@@ -292,14 +292,14 @@ public class GameManager : MonoBehaviour
 
     public void BuyTerrain(int _option)
     {
-        OperationTxt.text = "compra";
+        OperationTxt.text = "BUY";
         MainMenuOption = _option;
         ConfirmationMenu.SetActive(true);
     }
 
     public void SellTerrain(int _option)
     {
-        OperationTxt.text = "venda";
+        OperationTxt.text = "SELL";
         MainMenuOption = _option;
         ConfirmationMenu.SetActive(true);
        
