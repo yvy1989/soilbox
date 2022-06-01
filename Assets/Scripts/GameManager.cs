@@ -311,12 +311,12 @@ public class GameManager : MonoBehaviour
 
         if (myTerrains.Count==0)
         {
-            ShowInfo("Voce nao possui terrenos");
+            ShowInfo("You don't own a land");
+            
         }
         //verificar se o terreno e seu (se esta na lista)
         foreach (var item in myTerrains)
         {
-            //Debug.Log("entrou no loop");
             SoilBehavior itemLista = item.GetComponent<SoilBehavior>();// terreno q esta na lista ou nao
             SoilBehavior temp = TempTerrain.GetComponent<SoilBehavior>();// terreno temporario q veio via raycast qndo clicou
             
@@ -325,7 +325,6 @@ public class GameManager : MonoBehaviour
                 if ((itemLista.TerrenoId == temp.TerrenoId) )//terreno e seu
                 {
                     status = GameStatus.ManageTerrain;
-                    //Debug.Log("gerenciou");/////////////////////////
 
                     
                     ////passar como parametro de um evento o id do terreno q se esta gerenciando
@@ -337,8 +336,7 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-                    ShowInfo("esse terreno nao e seu");
-                    //Debug.Log("esse terreno nao e seu else 1");
+                    ShowInfo("this land is not yours");
                 }
             }
         }
@@ -373,14 +371,13 @@ public class GameManager : MonoBehaviour
             {
                 if(currentMoney < soil.price)
                 {
-                    ShowInfo("Voce nao tem dinheiro");
+                    ShowInfo("You don`t have enough money");
                 }
                 else
                 {
-                    ShowInfo("Terreno indisponivel");
+                    ShowInfo("Land Unavailable");
                 }
                 
-                //Debug.Log("Indisponivel");
                 return;
 
             }
@@ -396,13 +393,12 @@ public class GameManager : MonoBehaviour
                 {
                     if(tempSoil.TerrenoId == soil.TerrenoId && !soil.isAvaiable)
                     {
-                        Debug.Log("Vendeu");
                         currentMoney += soil.price;
                         //evento para mudar o valor de disponibilidade depois da venda
                         if (OnManageSoilwhithId != null) //// CHAMDA DO ENVENTO
                             OnManageSoilwhithId(soil.TerrenoId, true);//passa como parametro o id para soilBehavior para deixar disponivel
 
-                        ShowInfo("Venda Realizada com sucesso!!");
+                        ShowInfo("Sale made successfully!!");
                         myTerrains.Remove(item);// remove o terreno da lista
 
                         ConfirmationMenu.SetActive(false);
@@ -414,7 +410,7 @@ public class GameManager : MonoBehaviour
                 }
                 
             }
-            ShowInfo("Esse terreno nao e seu!!"); //varreu toda a lista e nao encontrou
+            ShowInfo("this land is not yours!"); //varreu toda a lista e nao encontrou
             return;
         }
 
@@ -452,7 +448,7 @@ public class GameManager : MonoBehaviour
         }
         else// caso contrario mandar msg erro
         {
-            ShowInfo("deposito cheio, crie mais celeiros");
+            ShowInfo("full warehouse, create more barns/silos");
         }
     }
 

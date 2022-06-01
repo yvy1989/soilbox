@@ -61,7 +61,7 @@ public class MouseOverUnit : MonoBehaviour
                 }
                 else
                 {
-                    GameManager.Instance.ShowInfo("armazem cheio");
+                    GameManager.Instance.ShowInfo("full storage");
                 }
                 
             }
@@ -81,7 +81,7 @@ public class MouseOverUnit : MonoBehaviour
                 }
                 else
                 {
-                    GameManager.Instance.ShowInfo("armazem cheio");
+                    GameManager.Instance.ShowInfo("full storage");
                 }
                 
             }
@@ -109,7 +109,7 @@ public class MouseOverUnit : MonoBehaviour
         }
         else
         {
-            GameManager.Instance.ShowInfo("Ainda nao e possivel colher ou destruir");
+            GameManager.Instance.ShowInfo("It is not yet possible to harvest or destroy");
             painel.SetActive(false);
         }
         
