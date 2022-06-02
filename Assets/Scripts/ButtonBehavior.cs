@@ -17,17 +17,17 @@ public class ButtonBehavior : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         if (UnityType == 1)
         {
-            CarbonValueTxt.text = GameManager.Instance.CostPlantatipnCarbon.ToString() + " Kg CO2/Ano";
+            CarbonValueTxt.text = GameManager.Instance.CostPlantatipnCarbon.ToString() + " Kg CO2";
             MoneyValueTxt.text = GameManager.Instance.CostPlantationValue.ToString() + " $";
         }
         if (UnityType == 2)
         {
-            CarbonValueTxt.text = GameManager.Instance.TreeCarbonValue.ToString() + " Kg CO2/Ano";
+            CarbonValueTxt.text = GameManager.Instance.TreeCarbonValue.ToString() + " Kg CO2";
             MoneyValueTxt.text = GameManager.Instance.CostTreeValue.ToString()+" $";
         }
         if (UnityType == 3)
         {
-            CarbonValueTxt.text = GameManager.Instance.AnimalCarbonValue.ToString() + " Kg CO2/Ano";
+            CarbonValueTxt.text = GameManager.Instance.AnimalCarbonValue.ToString() + " Kg CO2";
             MoneyValueTxt.text = GameManager.Instance.CostAnimalValue.ToString() + " $";
         }
 

@@ -23,7 +23,7 @@ public class UnitSpawnManager : MonoBehaviour
                     }
                     else
                     {
-                        GameManager.Instance.ShowInfo("Voce nao tem dinheiro sufuciente");
+                        GameManager.Instance.ShowInfo("you do not have enough money");
                     }
 
 
@@ -38,7 +38,7 @@ public class UnitSpawnManager : MonoBehaviour
                     }
                     else
                     {
-                        GameManager.Instance.ShowInfo("Voce nao tem dinheiro sufuciente");
+                        GameManager.Instance.ShowInfo("you do not have enough money");
                     }
                     break;
                 }
@@ -51,7 +51,7 @@ public class UnitSpawnManager : MonoBehaviour
                     }
                     else
                     {
-                        GameManager.Instance.ShowInfo("Voce nao tem dinheiro sufuciente");
+                        GameManager.Instance.ShowInfo("you do not have enough money");
                     }
                     break;
                 }
@@ -64,7 +64,7 @@ public class UnitSpawnManager : MonoBehaviour
                     }
                     else
                     {
-                        GameManager.Instance.ShowInfo("Voce nao tem dinheiro sufuciente");
+                        GameManager.Instance.ShowInfo("you do not have enough money");
                     }
                     break;
                 }
