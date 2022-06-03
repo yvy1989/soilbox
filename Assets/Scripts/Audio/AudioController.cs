@@ -40,4 +40,14 @@ public class AudioController : MonoBehaviour
     {
         AudioListener.volume = value;
     }
+
+    public void ToggleEffects()
+    {
+        effectSource.mute = !effectSource.mute;
+    }
+
+    public void ToggleMusic()
+    {
+        musicSource.mute = !musicSource.mute;
+    }
 }
