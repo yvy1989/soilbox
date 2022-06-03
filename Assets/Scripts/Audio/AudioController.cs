@@ -7,6 +7,9 @@ public class AudioController : MonoBehaviour
 
     public static AudioController Instance;
 
+    public AudioClip [] EffectsClips;
+    public AudioClip [] MusicsClips;
+
     public AudioSource musicSource, effectSource;
     // Start is called before the first frame update
 
@@ -23,8 +26,18 @@ public class AudioController : MonoBehaviour
         }
     }
     
-    public void PlaySound(AudioClip clip)
+    public void PlayEfect(int efectIndex)
     {
-        effectSource.PlayOneShot(clip);
+        effectSource.PlayOneShot(EffectsClips[efectIndex]); 
+    }
+
+    public void PlayMusic(int musicIndex)
+    {
+        musicSource.PlayOneShot(MusicsClips[musicIndex]);
+    }
+
+    public void changeMasterVolume(float value)
+    {
+        AudioListener.volume = value;
     }
 }
