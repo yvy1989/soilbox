@@ -2015,6 +2015,7 @@ GameObject:
   - component: {fileID: 5210881270820230005}
   - component: {fileID: 6467616487473700433}
   - component: {fileID: 7020470629418188276}
+  - component: {fileID: 1758111744535728006}
   m_Layer: 0
   m_Name: Panel
   m_TagString: Untagged
@@ -2084,6 +2085,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1758111744535728006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5137195690776498356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.7019608}
+  m_EffectDistance: {x: -5.68, y: -6.29}
+  m_UseGraphicAlpha: 1
 --- !u!1 &5192153635710584083
 GameObject:
   m_ObjectHideFlags: 0
