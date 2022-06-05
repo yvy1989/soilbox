@@ -13,6 +13,12 @@ public class AudioController : MonoBehaviour
     public AudioSource musicSource, effectSource;
     // Start is called before the first frame update
 
+    private void Start()
+    {
+        musicSource.PlayOneShot(MusicsClips[0]);
+    }
+
+
     private void Awake()
     {
         if (Instance == null)
@@ -49,5 +55,17 @@ public class AudioController : MonoBehaviour
     public void ToggleMusic()
     {
         musicSource.mute = !musicSource.mute;
+    }
+
+    public void changeMusicToGame()
+    {
+        musicSource.Stop();
+        musicSource.PlayOneShot(MusicsClips[1]);
+    }
+
+    public void changeMusicToMenu()
+    {
+        musicSource.Stop();
+        musicSource.PlayOneShot(MusicsClips[0]);
     }
 }
