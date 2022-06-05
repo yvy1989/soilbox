@@ -81,6 +81,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject MainMenu;
 
+    public GameObject Settings;
+    bool isSettingActive;
+
     public GameObject ConfirmationMenu;
 
     public GameObject InfoMenu;
@@ -125,8 +128,12 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+        AudioController.Instance.changeMusicToGame();// muda para a musica do jogo
 
         GameOverPanel.SetActive(false);
+
+        Settings.SetActive(false);
+        isSettingActive = false;
 
         currentMoney = startMoney;
         currentCarbon = startCarbon;
@@ -149,6 +156,8 @@ public class GameManager : MonoBehaviour
             GameTime();
 
             menuCanvas.enabled = isMenuActive;
+
+            Settings.SetActive(isSettingActive);
 
             Clique();
 
@@ -197,6 +206,11 @@ public class GameManager : MonoBehaviour
 
 
         //TimeUI.text = hour.ToString("00") + ":" + minutes.ToString("00") + ":" + seconds.ToString("00");
+    }
+
+    public void ChangeVisibilitySettings()
+    {
+        isSettingActive = !isSettingActive;
     }
 
     public void resetGame()
