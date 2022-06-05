@@ -15,7 +15,8 @@ public class AudioController : MonoBehaviour
 
     private void Start()
     {
-        musicSource.PlayOneShot(MusicsClips[0]);
+        musicSource.clip = MusicsClips[0];
+        musicSource.Play();
     }
 
 
@@ -60,12 +61,16 @@ public class AudioController : MonoBehaviour
     public void changeMusicToGame()
     {
         musicSource.Stop();
-        musicSource.PlayOneShot(MusicsClips[1]);
+        //musicSource.PlayOneShot(MusicsClips[1]);
+        musicSource.clip = MusicsClips[1];
+        musicSource.Play();
     }
 
     public void changeMusicToMenu()
     {
         musicSource.Stop();
-        musicSource.PlayOneShot(MusicsClips[0]);
+        //musicSource.PlayOneShot(MusicsClips[1]);
+        musicSource.clip = MusicsClips[0];
+        musicSource.Play();
     }
 }
