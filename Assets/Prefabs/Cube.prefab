@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942829703987209657}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.5289, z: 0}
   m_LocalScale: {x: 1, y: 0.0878, z: 1}
   m_Children:
@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942829703987209657}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 40fca5a2d8bb0d941a3201817258c813, type: 2}
+  - {fileID: 2100000, guid: 148d41775a2a1104caf4d4fe0c70d06b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -109,8 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec9c2737daa84147b08d13ad6989f99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TerrenoId: 0
-  price: 100
+  TerrenoId: 1
+  price: 200
   description: 
   isAvaiable: 1
 --- !u!1 &5394075852832514342
@@ -139,7 +139,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5394075852832514342}
-  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
+  m_LocalRotation: {x: 0.37098554, y: 0.60197157, z: -0.37098554, w: 0.60197157}
   m_LocalPosition: {x: 0, y: 3.55, z: 0}
   m_LocalScale: {x: 0.04413779, y: 0.04413779, z: 0.5}
   m_Children: []
