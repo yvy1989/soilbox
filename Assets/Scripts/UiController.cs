@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UiController : MonoBehaviour
 {
- 
+    public static UiController Instance;
 
     public Text TimeUI;
     public Image CreditAmount;
@@ -21,10 +21,15 @@ public class UiController : MonoBehaviour
     float fillMoney;
     float fillCarbon;
 
+
+    [Header("EfectsBar")]
+    public GameObject RedCarbonEfectBar;
+    public GameObject GreenCarbonEfectBar;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Instance = this;
     }
 
     // Update is called once per frame
@@ -79,5 +84,24 @@ public class UiController : MonoBehaviour
     private void TimeUiUpdate()
     {
         TimeUI.text = GameManager.Instance.hour.ToString("00") + ":" + GameManager.Instance.minutes.ToString("00") + ":" + GameManager.Instance.seconds.ToString("00");
+    }
+
+    public void efectBar(bool _efect)
+    {
+        if (_efect)
+        {
+
+        }
+        else
+        {
+            StartCoroutine(waitTimeEffectBar(1.5f));
+        }
+    }
+
+    IEnumerator waitTimeEffectBar(float _time)
+    {
+        RedCarbonEfectBar.SetActive(true);
+        yield return new WaitForSeconds(_time);
+        RedCarbonEfectBar.SetActive(false);
     }
 }

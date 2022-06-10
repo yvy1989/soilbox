@@ -70,6 +70,9 @@ public class BlueprintBehavior : MonoBehaviour
                 if (_PrefabUnit.GetComponent<UnitUpgrade>().typeUnity == 0)// se for planta
                 {
                     GameManager.Instance.addCarbon(GameManager.Instance.CostPlantatipnCarbon);// adicao de carbono qndo planta milho
+                    //Efeito dano carbono
+                    UiController.Instance.efectBar(false);
+                    //Audio dano carbono
                     GameManager.Instance.RemoveMoney(GameManager.Instance.CostPlantationValue);// remover dinheiro
 
                 }
