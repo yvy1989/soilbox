@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 5927733802844054764}
   - component: {fileID: -4219053286232027712}
   - component: {fileID: 6174740467641037761}
+  - component: {fileID: 6312253862450997837}
   m_Layer: 7
   m_Name: Cattle-Unit
   m_TagString: Untagged
@@ -175,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc232162b346ecf48a705ed769c55a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  estaNoTerreno: 0
+  isOnTerrain: 0
   isReady: 1
   TreeDown: {fileID: 0}
   TreeFinal: {fileID: 0}
@@ -205,6 +206,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.176775, y: 0.36764687, z: 6.1103706}
   m_Center: {x: 0, y: 0.17299005, z: 0}
+--- !u!114 &6312253862450997837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6387294052139420951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b36a59d0365e0c4d9869743df8c9c55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeMoney: 2
+  timeMaxCarbon: 10
+  CarbonAmount: 10
+  MoneyAmount: 30
 --- !u!1 &7043475116057333938
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,14 +583,14 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: e338bba8d1797404c8cc33ce4797d83c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23da3bbdf8a1ed840a1ba30bc40649e6, type: 3}
---- !u!1 &3520156455887056606 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 23da3bbdf8a1ed840a1ba30bc40649e6, type: 3}
-  m_PrefabInstance: {fileID: 4331181311453500303}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4292435163541042276 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 23da3bbdf8a1ed840a1ba30bc40649e6, type: 3}
+  m_PrefabInstance: {fileID: 4331181311453500303}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3520156455887056606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 23da3bbdf8a1ed840a1ba30bc40649e6, type: 3}
   m_PrefabInstance: {fileID: 4331181311453500303}
   m_PrefabAsset: {fileID: 0}
 --- !u!195 &5647681935483871471

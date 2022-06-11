@@ -487,6 +487,8 @@ public class GameManager : MonoBehaviour
 
     public void addMoney(float amount)
     {
+        //money sound
+        //money effect
         currentMoney += amount;
     }
 
