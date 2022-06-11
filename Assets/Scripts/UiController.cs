@@ -86,22 +86,25 @@ public class UiController : MonoBehaviour
         TimeUI.text = GameManager.Instance.hour.ToString("00") + ":" + GameManager.Instance.minutes.ToString("00") + ":" + GameManager.Instance.seconds.ToString("00");
     }
 
-    public void efectBar(bool _efect)
+    public void startEfect(float _time,bool _effect)
+    {
+        StartCoroutine(waitTimeEffectBar(_time, _effect));
+    }
+
+    public IEnumerator waitTimeEffectBar(float _time, bool _efect)//true positive carbon - false negative efect
     {
         if (_efect)
         {
-
+            GreenCarbonEfectBar.SetActive(true);
+            yield return new WaitForSeconds(_time);
+            GreenCarbonEfectBar.SetActive(false);
         }
         else
         {
-            StartCoroutine(waitTimeEffectBar(1.5f));
+            RedCarbonEfectBar.SetActive(true);
+            yield return new WaitForSeconds(_time);
+            RedCarbonEfectBar.SetActive(false);
         }
-    }
-
-    IEnumerator waitTimeEffectBar(float _time)
-    {
-        RedCarbonEfectBar.SetActive(true);
-        yield return new WaitForSeconds(_time);
-        RedCarbonEfectBar.SetActive(false);
+        
     }
 }

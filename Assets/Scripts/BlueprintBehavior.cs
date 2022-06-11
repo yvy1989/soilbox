@@ -71,7 +71,8 @@ public class BlueprintBehavior : MonoBehaviour
                 {
                     GameManager.Instance.addCarbon(GameManager.Instance.CostPlantatipnCarbon);// adicao de carbono qndo planta milho
                     //Efeito dano carbono
-                    UiController.Instance.efectBar(false);
+                    //UiController.Instance.efectBar(false);
+                  
                     //Audio dano carbono
                     GameManager.Instance.RemoveMoney(GameManager.Instance.CostPlantationValue);// remover dinheiro
 
@@ -79,7 +80,8 @@ public class BlueprintBehavior : MonoBehaviour
 
                 if (_PrefabUnit.GetComponent<UnitUpgrade>().typeUnity == 1)// se for arvore
                 {
-                    GameManager.Instance.addCarbon(GameManager.Instance.TreeCarbonValue);// remocao de carbono qndo planta arvores
+                    GameManager.Instance.RemoveCarbon(GameManager.Instance.DownTreeCarbon);// remocao de carbono qndo planta arvores
+                    
                     GameManager.Instance.RemoveMoney(GameManager.Instance.CostTreeValue);// remover dinheiro
 
                 }

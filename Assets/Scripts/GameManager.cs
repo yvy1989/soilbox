@@ -31,13 +31,14 @@ public class GameManager : MonoBehaviour
     [Header("Arvore")]
     public float CostTreeValue;//custo de dinheiro para plantar arvore
     public float TreeCarbonValue;//custo de carbono por arvore para remover
+    public float DownTreeCarbon;//custo de carbono por derrubar arvore
     public float StorageTreeFill;//custo de storage para madeira arvore
 
 
     [Header("Animal")]
     public float CostAnimalValue;//custo de dinheiro para criar animal
     public float AnimalCarbonValue;//custo de carbono para criar animal
-    public float DownTreeCarbon;//custo de carbono por derrubar arvore
+    
 
     [Header("Armazem")]
     public float initialStorage, currentStorage, finalStorage;
@@ -469,6 +470,7 @@ public class GameManager : MonoBehaviour
 
     public void addCarbon(float amount)
     {
+        UiController.Instance.startEfect(0.6f, false);
         currentCarbon += amount;
     }
 
@@ -476,6 +478,7 @@ public class GameManager : MonoBehaviour
 
     public void RemoveCarbon(float amount)
     {
+        UiController.Instance.startEfect(0.6f, true);
         currentCarbon -= amount;
     }
 

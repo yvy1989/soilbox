@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Bar-Mat
+  m_Name: Bar-Red-Mat
   m_Shader: {fileID: -6465566751694194690, guid: a91134856b0f95842a24ae0ef75b1a7b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -33,5 +33,5 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - Color_a4d40bc2265d4619bbb590f737475812: {r: 5.656854, g: 0.00000076426284, b: 0, a: 0}
+    - Color_a4d40bc2265d4619bbb590f737475812: {r: 5.656854, g: 0.022183742, b: 0, a: 0.9843137}
   m_BuildTextureStacks: []

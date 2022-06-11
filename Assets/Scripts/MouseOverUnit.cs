@@ -53,6 +53,7 @@ public class MouseOverUnit : MonoBehaviour
             {
                 if (GameManager.Instance.currentStorage < GameManager.Instance.finalStorage)
                 {
+
                     painel.SetActive(false);
                     Destroy(Unit);
 
