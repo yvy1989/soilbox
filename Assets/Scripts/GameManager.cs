@@ -217,6 +217,7 @@ public class GameManager : MonoBehaviour
     public void resetGame()
     {
         GameOverPanel.SetActive(false);
+        AudioController.Instance.changeMusicToMenu();
         
         SceneManager.LoadScene("menu");    
     }
@@ -496,4 +497,5 @@ public class GameManager : MonoBehaviour
     {
         currentMoney -= amount;
     }
+
 }
