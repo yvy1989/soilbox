@@ -56,7 +56,7 @@ public class MouseOverUnit : MonoBehaviour
 
                     painel.SetActive(false);
                     Destroy(Unit);
-
+                    GameObject g = Instantiate(UiController.Instance.starPositive, transform.position, Quaternion.identity);
                     GameManager.Instance.addMoney(myUnit.MoneyReward);// por enquanto tanto arvore qnto planta usam a mesma variavel
                     GameManager.Instance.fillStorage(GameManager.Instance.StoragePlantFill);// valor de armazenamento de plantas
                 }
@@ -76,7 +76,7 @@ public class MouseOverUnit : MonoBehaviour
                     myUnit.downUnit();
                     Invoke("waitToDownTree", 4f);// espera 4 segundos antes de destruir a arvore
                     GameManager.Instance.addCarbon(GameManager.Instance.DownTreeCarbon);// da dano de carbono por derrubar arvore;
-
+                    GameObject g = Instantiate(UiController.Instance.ExplosionNegative, transform.position, Quaternion.identity);
                     GameManager.Instance.addMoney(myUnit.MoneyReward);// por enquanto tanto arvore qnto planta usam a mesma variavel
                     GameManager.Instance.fillStorage(GameManager.Instance.StorageTreeFill);// valor de armazenamento de arvores
                 }
@@ -93,6 +93,7 @@ public class MouseOverUnit : MonoBehaviour
             {
                 painel.SetActive(false);
                 myUnit.downUnit();
+                GameObject g = Instantiate(UiController.Instance.ExplosionNegative, transform.position, Quaternion.identity);
                 Invoke("waitToDownTree", 4f);// espera 4 segundos antes de destruir
 
             }

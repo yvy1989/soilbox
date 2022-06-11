@@ -499,6 +499,8 @@ MonoBehaviour:
   finalStorageTxt: {fileID: 1880495306}
   RedCarbonEfectBar: {fileID: 328564943}
   GreenCarbonEfectBar: {fileID: 1408978726}
+  starPositive: {fileID: 1844191813266838, guid: 968c924d2be019d4b9e67647551eec3e, type: 3}
+  ExplosionNegative: {fileID: 1462327970484030, guid: f01c1eba69de19e44b04d8d651aaac37, type: 3}
 --- !u!4 &137945863
 Transform:
   m_ObjectHideFlags: 0
@@ -7727,10 +7729,10 @@ MonoBehaviour:
   StoragePlantFill: 3
   CostTreeValue: 10
   TreeCarbonValue: -10
+  DownTreeCarbon: 10
   StorageTreeFill: 5
   CostAnimalValue: 10
   AnimalCarbonValue: -5
-  DownTreeCarbon: 10
   initialStorage: 10
   currentStorage: 0
   finalStorage: 25

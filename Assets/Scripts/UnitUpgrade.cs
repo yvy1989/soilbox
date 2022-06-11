@@ -116,6 +116,7 @@ public class UnitUpgrade : MonoBehaviour
 
     public void downUnit()// colher ou derrubar
     {
+        GameObject g = Instantiate(UiController.Instance.ExplosionNegative,transform.position,Quaternion.identity);
         TreeFinal.SetActive(false);
         TreeDown.SetActive(true);
         isReady = false;

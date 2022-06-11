@@ -26,6 +26,10 @@ public class UiController : MonoBehaviour
     public GameObject RedCarbonEfectBar;
     public GameObject GreenCarbonEfectBar;
 
+    [Header("FX prefabs")]
+    public GameObject starPositive;
+    public GameObject ExplosionNegative;
+
     // Start is called before the first frame update
     void Start()
     {

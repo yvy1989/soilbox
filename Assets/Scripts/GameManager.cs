@@ -377,6 +377,7 @@ public class GameManager : MonoBehaviour
 
                 currentMoney -= soil.price;//retira o valor do terreno do current money
                 AudioController.Instance.PlayEfect(6); //feedback positivo qndo compra terreno
+                
 
 
                 ConfirmationMenu.SetActive(false);
