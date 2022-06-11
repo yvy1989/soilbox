@@ -376,7 +376,7 @@ public class GameManager : MonoBehaviour
                     OnManageSoilwhithId(soil.TerrenoId,false);//passa como parametro o id para soilBehavior para deixar indisponivel
 
                 currentMoney -= soil.price;//retira o valor do terreno do current money
-
+                AudioController.Instance.PlayEfect(6); //feedback positivo qndo compra terreno
 
 
                 ConfirmationMenu.SetActive(false);
