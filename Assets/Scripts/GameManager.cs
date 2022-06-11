@@ -470,6 +470,7 @@ public class GameManager : MonoBehaviour
 
     public void addCarbon(float amount)
     {
+        AudioController.Instance.PlayEfect(9);
         UiController.Instance.startEfect(0.6f, false);
         currentCarbon += amount;
     }
@@ -478,6 +479,7 @@ public class GameManager : MonoBehaviour
 
     public void RemoveCarbon(float amount)
     {
+        AudioController.Instance.PlayEfect(6);
         UiController.Instance.startEfect(0.6f, true);
         currentCarbon -= amount;
     }
