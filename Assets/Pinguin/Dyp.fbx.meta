@@ -1,34 +1,9 @@
 fileFormatVersion: 2
-guid: 8eb4f082153109d4b829f70e8a35d913
+guid: 269d4b0d6b120634fa0c6be2ff2fe9f1
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: marrom
-    second: {fileID: 2100000, guid: 1f584740b5caa8146a757725678b0b3e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: marrrom-escuro
-    second: {fileID: 2100000, guid: 6a492b15bba75a84d975a3540bc29e5b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: verde
-    second: {fileID: 2100000, guid: 125d321bb6bb1e845bf27d8aba3af45a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: verde-claro
-    second: {fileID: 2100000, guid: 6da94821f8a4d2b4eafee44c2af28556, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: verde-escuro
-    second: {fileID: 2100000, guid: f9d3f79e6523bdf4f889c6d9de9a4664, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -59,7 +34,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.25
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -110,7 +85,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.25
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
