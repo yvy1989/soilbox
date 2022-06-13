@@ -484,7 +484,7 @@ public class GameManager : MonoBehaviour
 
     public void addMoney(float amount)
     {
-        UiController.Instance.startEfect(0.6f, true);
+        AudioController.Instance.PlayEfect(5);
         currentMoney += amount;
     }
 
