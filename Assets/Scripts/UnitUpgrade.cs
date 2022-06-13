@@ -92,7 +92,6 @@ public class UnitUpgrade : MonoBehaviour
         for (int i = 0; i < levelsCount; i++)
         {
             yield return new WaitForSeconds(sizePlantDuration);
-            //Debug.Log("cresceu");//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             transform.GetChild(i).gameObject.SetActive(true);
 
             disableChild(i);

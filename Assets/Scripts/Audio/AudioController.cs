@@ -61,7 +61,6 @@ public class AudioController : MonoBehaviour
     public void changeMusicToGame()
     {
         musicSource.Stop();
-        //musicSource.PlayOneShot(MusicsClips[1]);
         musicSource.clip = MusicsClips[1];
         musicSource.Play();
     }

@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public Text TextRankUI;
 
 
+    [Header("GameOver")]
+    public Text GameOverTxt;
     public GameObject GameOverPanel;
     public bool isGameOver = false; //controla so o jogo acabou
 
@@ -114,18 +116,6 @@ public class GameManager : MonoBehaviour
         menuCanvas.enabled = isMenuActive;
         Instance = this;
 
-        /* remocao do singleton
-        if (Instance != null && Instance != this)
-        {
-
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-            Instance = this;
-        }*/
-
     }
     void Start()
     {
@@ -174,8 +164,16 @@ public class GameManager : MonoBehaviour
 
             if (isGameOver)
             {
+                if (currentMoney <= 0)
+                {
+                    GameOverTxt.text = "Your money is gone, try again";
+                }
+                if (currentCarbon >= maxCarbon)
+                {
+                    GameOverTxt.text = "You've emitted too much carbon into the atmosphere, try again";
+                }
                 GameOverPanel.SetActive(true);
-                TextRankUI.text = hour.ToString("00") + " horas " + minutes.ToString("00") + " minutos e " + seconds.ToString("00") + " segundos";
+                TextRankUI.text = hour.ToString("00") + " Hours " + minutes.ToString("00") + " Minutes and " + seconds.ToString("00") + " seccnds";
             }
         }
 
@@ -205,8 +203,6 @@ public class GameManager : MonoBehaviour
             hour++;
         }
 
-
-        //TimeUI.text = hour.ToString("00") + ":" + minutes.ToString("00") + ":" + seconds.ToString("00");
     }
 
     public void ChangeVisibilitySettings()
@@ -226,7 +222,7 @@ public class GameManager : MonoBehaviour
 
     private void checkGameOver()
     {
-        if(currentCarbon>=100 || currentMoney <= 0)
+        if(currentCarbon>= maxCarbon || currentMoney <= 0)
         {
             isGameOver = true;
         }
@@ -488,8 +484,7 @@ public class GameManager : MonoBehaviour
 
     public void addMoney(float amount)
     {
-        //money sound
-        //money effect
+        UiController.Instance.startEfect(0.6f, true);
         currentMoney += amount;
     }
 
