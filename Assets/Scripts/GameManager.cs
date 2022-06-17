@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
     public float currentCarbon;
     public float maxCarbon;
 
-    ////////////////////////////////////VAI VIRAR UI manager////////////////////////////
+    ////////////////////////////////////UI ////////////////////////////
     public Canvas menuCanvas;
 
     public GameObject MainMenu;
@@ -103,6 +103,8 @@ public class GameManager : MonoBehaviour
 
     public Text MoneyTxt;
     public Text CarbonTxt;
+    ////////////////////////////////ACESSADO VIA MOUSEOVERUNIT//////////////////////
+    public bool CanClickUnit;
 
     ///////////////////////////////////////////////////////////////////////////////////
 
@@ -119,6 +121,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+        CanClickUnit = true;
         AudioController.Instance.changeMusicToGame();// muda para a musica do jogo
 
         GameOverPanel.SetActive(false);
@@ -140,8 +143,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
 
+        ////////////////////////////////////////////////////////////////GAME FUNCIONANDO//////////////////////////////////////////////////////////
         if (isGameOver == false)// verifica se o jogo terminou
         {
             GameTime();
@@ -176,6 +179,8 @@ public class GameManager : MonoBehaviour
                 TextRankUI.text = hour.ToString("00") + " Hours " + minutes.ToString("00") + " Minutes and " + seconds.ToString("00") + " seccnds";
             }
         }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
 
 
 

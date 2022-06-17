@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MouseOverUnit : MonoBehaviour
 {
+
+
     UnitUpgrade myUnit;
 
     public GameObject Unit;
@@ -31,14 +33,22 @@ public class MouseOverUnit : MonoBehaviour
     private void OnMouseExit()
     {
         GetComponent<MeshRenderer>().enabled = false;
+        //GameManager.Instance.CanClickUnit = true;
     }
 
     private void OnMouseDown()
     {
-        
-        isPanelAvcive = !isPanelAvcive;
+        if (GameManager.Instance.CanClickUnit)
+        {
+            GameManager.Instance.CanClickUnit = false;
 
-        painel.SetActive(isPanelAvcive);
+            isPanelAvcive = !isPanelAvcive;
+
+
+
+            painel.SetActive(isPanelAvcive);
+
+        }
 
 
 
@@ -46,6 +56,8 @@ public class MouseOverUnit : MonoBehaviour
 
     public void colher()
     {
+        GameManager.Instance.CanClickUnit = true;
+
         if (myUnit.isReady)//se a plante estiver pronta p colher ou derrubar
         {
 
@@ -121,6 +133,7 @@ public class MouseOverUnit : MonoBehaviour
     {
         painel.SetActive(false);
         isPanelAvcive = false;
+        GameManager.Instance.CanClickUnit = true;
     }
 
     void waitToDownTree()
