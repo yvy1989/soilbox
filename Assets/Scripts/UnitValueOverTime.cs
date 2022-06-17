@@ -14,6 +14,7 @@ public class UnitValueOverTime : MonoBehaviour
 
     public GameObject unit;
     public GameObject ParticleCoin;
+    public GameObject ParticleGas;
 
     
     void Start()
@@ -36,21 +37,25 @@ public class UnitValueOverTime : MonoBehaviour
         while (true)
         {
             GameObject coin;
+            GameObject gas = null;
             yield return new WaitForSeconds(_timeMoney);
 
             GameManager.Instance.addMoney(_MoneyAmount);
 
 
             coin = Instantiate(ParticleCoin, new Vector3(unit.transform.position.x, unit.transform.position.y+1, unit.transform.position.z),Quaternion.Euler(-90, -90, 0));
+           
 
             if (tempCarbon > _timeMaxCarbon)
             {
                 GameManager.Instance.addCarbon(_CarbonAmount);
+                gas = Instantiate(ParticleGas, new Vector3(unit.transform.position.x, unit.transform.position.y, unit.transform.position.z), Quaternion.Euler(-90, -90, 0));
                 tempCarbon = 0;
             }
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1.5f);
             Destroy(coin);
+            Destroy(gas);
             tempCarbon++;
         }
 
