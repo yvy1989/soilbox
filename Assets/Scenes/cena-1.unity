@@ -3304,7 +3304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8506429727943422740, guid: 0515f1c13605a6247a0ebe4734baa088, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0515f1c13605a6247a0ebe4734baa088, type: 3}
@@ -4916,7 +4916,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Kg CO2/Ano
+  m_Text: '   Kg CO2'
 --- !u!222 &857096369
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7913,7 +7913,7 @@ MonoBehaviour:
   CostPlantationValue: 5
   CostPlantatipnCarbon: 0.56
   StoragePlantFill: 3
-  CostTreeValue: 10
+  CostTreeValue: 8.33
   TreeCarbonValue: -10
   DownTreeCarbon: 10
   StorageTreeFill: 5
