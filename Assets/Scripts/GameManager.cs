@@ -478,7 +478,11 @@ public class GameManager : MonoBehaviour
         currentCarbon += amount;
     }
 
-
+    public void sellCarbon(float carbonAmount,float moneyAmount)
+    {
+        addCarbon(carbonAmount);
+        addMoney(moneyAmount);
+    }
 
     public void RemoveCarbon(float amount)
     {
