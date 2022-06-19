@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
     public Text MoneyTxt;
     public Text CarbonTxt;
     ////////////////////////////////ACESSADO VIA MOUSEOVERUNIT//////////////////////
-    public bool CanClickUnit;
+    
 
     ///////////////////////////////////////////////////////////////////////////////////
 
@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        CanClickUnit = true;
+        
         AudioController.Instance.changeMusicToGame();// muda para a musica do jogo
 
         GameOverPanel.SetActive(false);
@@ -490,6 +490,11 @@ public class GameManager : MonoBehaviour
     public void addMoney(float amount)
     {
         AudioController.Instance.PlayEfect(5);
+        currentMoney += amount;
+    }
+
+    public void addCattleMoney(float amount)
+    {
         currentMoney += amount;
     }
 

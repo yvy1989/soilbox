@@ -40,7 +40,7 @@ public class UnitValueOverTime : MonoBehaviour
             GameObject gas = null;
             yield return new WaitForSeconds(_timeMoney);
 
-            GameManager.Instance.addMoney(_MoneyAmount);
+            GameManager.Instance.addCattleMoney(_MoneyAmount);
 
 
             coin = Instantiate(ParticleCoin, new Vector3(unit.transform.position.x, unit.transform.position.y+1, unit.transform.position.z),Quaternion.Euler(-90, -90, 0));

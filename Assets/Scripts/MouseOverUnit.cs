@@ -38,17 +38,11 @@ public class MouseOverUnit : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (GameManager.Instance.CanClickUnit)
-        {
-            GameManager.Instance.CanClickUnit = false;
+        isPanelAvcive = !isPanelAvcive;
 
-            isPanelAvcive = !isPanelAvcive;
+        painel.transform.position = Input.mousePosition;
 
-
-
-            painel.SetActive(isPanelAvcive);
-
-        }
+        painel.SetActive(isPanelAvcive);
 
 
 
@@ -56,7 +50,7 @@ public class MouseOverUnit : MonoBehaviour
 
     public void colher()
     {
-        GameManager.Instance.CanClickUnit = true;
+        
 
         if (myUnit.isReady)//se a plante estiver pronta p colher ou derrubar
         {
@@ -133,7 +127,7 @@ public class MouseOverUnit : MonoBehaviour
     {
         painel.SetActive(false);
         isPanelAvcive = false;
-        GameManager.Instance.CanClickUnit = true;
+        
     }
 
     void waitToDownTree()
