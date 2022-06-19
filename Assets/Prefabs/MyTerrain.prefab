@@ -1962,7 +1962,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1332883384342869964
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2249,6 +2249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78c0ed4c71f61b4f8e8d7d53090c996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carbonDamage: 5
+  moneyReward: 10
   SellCo2Menu: {fileID: 4395539628473673841}
 --- !u!1 &4814307650757511234
 GameObject:

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class SellCo2 : MonoBehaviour
 {
+    public float carbonDamage;
+    public float moneyReward;
+
+
     public GameObject SellCo2Menu;
     //public bool isSellPanelEnable = false;
     // Start is called before the first frame update
@@ -27,7 +31,7 @@ public class SellCo2 : MonoBehaviour
 
     public void BtnYes()
     {
-        GameManager.Instance.sellCarbon(5, 10);
+        GameManager.Instance.sellCarbon(carbonDamage, moneyReward);
         SellCo2Menu.SetActive(false);
     }
 
