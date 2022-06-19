@@ -23,6 +23,10 @@ public class MouseOverUnit : MonoBehaviour
     void Update()
     {
         //Debug.Log(myPlant.CurrentlevelsCount);
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            cancelar();
+        }
     }
 
     private void OnMouseEnter()
@@ -40,7 +44,7 @@ public class MouseOverUnit : MonoBehaviour
     {
         isPanelAvcive = !isPanelAvcive;
 
-        painel.transform.position = Input.mousePosition;
+        //painel.transform.position = Input.mousePosition;
 
         painel.SetActive(isPanelAvcive);
 
