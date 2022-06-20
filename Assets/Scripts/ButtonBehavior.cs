@@ -27,7 +27,7 @@ public class ButtonBehavior : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         }
         if (UnityType == 3)
         {
-            CarbonValueTxt.text = GameManager.Instance.AnimalCarbonValue.ToString() + " Kg CO2";
+            //CarbonValueTxt.text = GameManager.Instance.AnimalCarbonValue.ToString() + " Kg CO2";
             MoneyValueTxt.text = GameManager.Instance.CostAnimalValue.ToString() + " $";
         }
 

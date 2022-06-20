@@ -3304,7 +3304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8506429727943422740, guid: 0515f1c13605a6247a0ebe4734baa088, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0515f1c13605a6247a0ebe4734baa088, type: 3}
@@ -7910,15 +7910,15 @@ MonoBehaviour:
   GameOverTxt: {fileID: 1991787962}
   GameOverPanel: {fileID: 939934689}
   isGameOver: 0
-  CostPlantationValue: 5
+  CostPlantationValue: 10
   CostPlantatipnCarbon: 0.56
   StoragePlantFill: 0.5
   CostTreeValue: 8.33
   TreeCarbonValue: -10
   DownTreeCarbon: 10
   StorageTreeFill: 0.2
-  CostAnimalValue: 10
-  AnimalCarbonValue: -5
+  CostAnimalValue: 100
+  AnimalCarbonValue: 5
   AnimalStorageValue: 0.8
   timeMoney: 30
   MoneyAmount: 10
