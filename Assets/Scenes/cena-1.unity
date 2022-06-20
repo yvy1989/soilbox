@@ -807,8 +807,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 52, y: -15}
-  m_SizeDelta: {x: 232.9993, y: 30}
+  m_AnchoredPosition: {x: 89.582, y: -15}
+  m_SizeDelta: {x: 308.1632, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &181245238
 MonoBehaviour:
@@ -7912,14 +7912,19 @@ MonoBehaviour:
   isGameOver: 0
   CostPlantationValue: 5
   CostPlantatipnCarbon: 0.56
-  StoragePlantFill: 3
+  StoragePlantFill: 0.5
   CostTreeValue: 8.33
   TreeCarbonValue: -10
   DownTreeCarbon: 10
-  StorageTreeFill: 5
+  StorageTreeFill: 0.2
   CostAnimalValue: 10
   AnimalCarbonValue: -5
-  initialStorage: 10
+  AnimalStorageValue: 0.8
+  timeMoney: 30
+  MoneyAmount: 10
+  timeMaxCarbon: 3
+  CarbonAmount: 0.5
+  initialStorage: 0.1
   currentStorage: 0
   finalStorage: 25
   CostStorageValue: 10
@@ -7927,7 +7932,7 @@ MonoBehaviour:
   myTerrains: []
   TempTerrain: {fileID: 0}
   isMenuActive: 0
-  startMoney: 1500
+  startMoney: 600
   currentMoney: 0
   MaxMoney: 50000
   startCarbon: 0

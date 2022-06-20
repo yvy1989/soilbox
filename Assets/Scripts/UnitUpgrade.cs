@@ -67,7 +67,7 @@ public class UnitUpgrade : MonoBehaviour
         if (animalAnim != null)
         {
             animalAnim.SetFloat("speed", AnimalAgent.velocity.magnitude);
-            Debug.Log(AnimalAgent.velocity.magnitude);
+            //Debug.Log(AnimalAgent.velocity.magnitude);
         }
         
 

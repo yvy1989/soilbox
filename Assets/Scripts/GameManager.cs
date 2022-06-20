@@ -40,7 +40,14 @@ public class GameManager : MonoBehaviour
     [Header("Animal")]
     public float CostAnimalValue;//custo de dinheiro para criar animal
     public float AnimalCarbonValue;//custo de carbono para criar animal
+    public float AnimalStorageValue;//valor de armazenamento
+
+    public float timeMoney;// tempo para receber a recompensa em segundos
+    public float MoneyAmount;// recompensa
+    public float timeMaxCarbon;// maximo de tempo ate tomar o dano de carbono (exemplo timeMaxCarbon= 2 quer dizer q a cada 2 pagamentos 1 dano carbono)
+    public float CarbonAmount;// dano de carbono
     
+
 
     [Header("Armazem")]
     public float initialStorage, currentStorage, finalStorage;
