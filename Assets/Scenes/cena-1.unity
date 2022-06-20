@@ -971,7 +971,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -2157,7 +2157,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -2235,7 +2235,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -2313,7 +2313,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -2769,7 +2769,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -3304,7 +3304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8506429727943422740, guid: 0515f1c13605a6247a0ebe4734baa088, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0515f1c13605a6247a0ebe4734baa088, type: 3}
@@ -3317,7 +3317,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -3395,7 +3395,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -3473,7 +3473,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -4017,7 +4017,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -4350,7 +4350,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -308, y: -21}
+  m_AnchoredPosition: {x: -308, y: 203}
   m_SizeDelta: {x: 1792, y: 234}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &676291473
@@ -5015,7 +5015,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -5176,7 +5176,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -6744,7 +6744,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -7090,7 +7090,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -7629,7 +7629,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -7707,7 +7707,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -7927,12 +7927,13 @@ MonoBehaviour:
   initialStorage: 0.1
   currentStorage: 0
   finalStorage: 25
-  CostStorageValue: 10
+  CostStorageValue: 250
+  storageUpgradeAmount: 25
   status: 0
   myTerrains: []
   TempTerrain: {fileID: 0}
   isMenuActive: 0
-  startMoney: 600
+  startMoney: 1500
   currentMoney: 0
   MaxMoney: 50000
   startCarbon: 0
@@ -8502,7 +8503,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -312, y: -20.652012}
+  m_AnchoredPosition: {x: -312, y: 203.3481}
   m_SizeDelta: {x: 1695, y: 196}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1507375739
@@ -8820,7 +8821,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -8898,7 +8899,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -9072,7 +9073,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -9373,7 +9374,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -10157,7 +10158,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -10310,7 +10311,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -12212,7 +12213,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -12423,7 +12424,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -12544,7 +12545,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: price
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: TerrenoId
@@ -12685,6 +12686,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2049866879}
     m_Modifications:
+    - target: {fileID: 1379900263629281271, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
+      propertyPath: price
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 1942829703987209657, guid: aa36c2fe73c33bc4d9da259dd0aebdbb, type: 3}
       propertyPath: m_Name
       value: Cube
