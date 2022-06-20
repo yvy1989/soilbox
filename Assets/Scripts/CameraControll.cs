@@ -90,16 +90,17 @@ public class CameraControll : MonoBehaviour
 
     private static void zoomScroll()
     {
+        
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
-            if (Camera.main.fieldOfView > 1)
+            if (Camera.main.fieldOfView > 4)
             {
                 Camera.main.fieldOfView--;
             }
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
-            if (Camera.main.fieldOfView < 100)
+            if (Camera.main.fieldOfView < 45)
             {
                 Camera.main.fieldOfView++;
             }

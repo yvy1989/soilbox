@@ -64,7 +64,7 @@ public class UnitValueOverTime : MonoBehaviour
             Destroy(coin);
             Destroy(gas);
             tempCarbon++;
-            Debug.Log(tempCarbon);
+            //Debug.Log(tempCarbon);
         }
 
     }
