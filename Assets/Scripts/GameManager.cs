@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
     [Header("Armazem")]
     public float initialStorage, currentStorage, finalStorage;
     public float CostStorageValue;//custo de dinheiro para criar um celeiro/silo
+    public float storageUpgradeAmount; //taxa de atualizacao qndo se cria um armazem
 
     public event Action<int,bool> OnManageSoilwhithId;
     public event Action<int> OnChangeCamera;

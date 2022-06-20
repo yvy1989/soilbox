@@ -22,7 +22,7 @@ public class GetAnimalCosts : MonoBehaviour
         moneyReward.text = GameManager.Instance.MoneyAmount.ToString() + "$";
         carbonDamage.text = GameManager.Instance.CarbonAmount.ToString() +"Kg CO2";
         timeAmount.text = GameManager.Instance.timeMoney.ToString() + " Seconds";
-        timeAmountCarbon.text = (GameManager.Instance.timeMoney*2).ToString() + " Seconds";
+        timeAmountCarbon.text = (GameManager.Instance.timeMoney*4).ToString() + " Seconds";
 
 
     }

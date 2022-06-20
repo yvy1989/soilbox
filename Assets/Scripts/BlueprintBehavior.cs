@@ -97,7 +97,7 @@ public class BlueprintBehavior : MonoBehaviour
                 if (_PrefabUnit.GetComponent<UnitUpgrade>().typeUnity == 3)// se for celeiro
                 {
                     
-                    GameManager.Instance.upGradeStorage(25f);// atualiza o storage em 25 unidades
+                    GameManager.Instance.upGradeStorage(GameManager.Instance.storageUpgradeAmount);// atualiza o storage em 25 unidades
                     GameManager.Instance.RemoveMoney(GameManager.Instance.CostStorageValue);// remover dinheiro
                 }
 
