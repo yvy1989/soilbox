@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TerrenoId: 1
-  price: 200
+  price: 1000
   description: 
   isAvaiable: 1
 --- !u!1 &5394075852832514342

@@ -1583,7 +1583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab6995d49590af4d83fab47d93a496b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UnityType: 3
+  UnityType: 4
   CarbonValueTxt: {fileID: 4053743723283332276}
   MoneyValueTxt: {fileID: 8270800896540782910}
 --- !u!1 &3122364162845180880
@@ -2223,7 +2223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2489143356191953858
 RectTransform:
   m_ObjectHideFlags: 0
