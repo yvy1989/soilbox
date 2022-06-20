@@ -86,6 +86,14 @@ public class BlueprintBehavior : MonoBehaviour
 
                 }
 
+                if (_PrefabUnit.GetComponent<UnitUpgrade>().typeUnity == 2)// se for animal
+                {
+                    
+
+                    GameManager.Instance.RemoveMoney(GameManager.Instance.CostAnimalValue);// remover dinheiro
+
+                }
+
                 if (_PrefabUnit.GetComponent<UnitUpgrade>().typeUnity == 3)// se for celeiro
                 {
                     
