@@ -28,6 +28,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2100000, guid: d1f79991773495648a717487a206be8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: preto
     second: {fileID: 2100000, guid: 7a258c3419f402242955162a25bce857, type: 2}
   - first:

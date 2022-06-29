@@ -12,9 +12,12 @@ public class UnitValueOverTime : MonoBehaviour
 
     float timeMoney, timeMaxCarbon, CarbonAmount, MoneyAmount,storageAmount;
 
+
+    public GameObject vaca;
     public GameObject unit;
     public GameObject ParticleCoin;
     public GameObject ParticleGas;
+    public Transform gasPoint;
 
     
     void Start()
@@ -27,7 +30,9 @@ public class UnitValueOverTime : MonoBehaviour
 
         unit = transform.GetChild(0).gameObject;
 
-        StartCoroutine(AddAndRemoveValues(timeMoney, timeMaxCarbon, CarbonAmount, MoneyAmount, storageAmount));
+        StartCoroutine(AddMoney(timeMoney, MoneyAmount, storageAmount));
+
+        StartCoroutine(CarbonDamage(timeMaxCarbon, CarbonAmount));
     }
 
     // Update is called once per frame
@@ -36,35 +41,44 @@ public class UnitValueOverTime : MonoBehaviour
         
     }
 
-    IEnumerator AddAndRemoveValues(float _timeMoney,float _timeMaxCarbon,float _CarbonAmount,float _MoneyAmount, float _storageAmount)
+    IEnumerator AddMoney(float _timeMoney,float _MoneyAmount, float _storageAmount)
     {
-        
-        float tempCarbon = 0;
+
         while (true)
         {
             GameObject coin;
-            GameObject gas = null;
+
             yield return new WaitForSeconds(_timeMoney);
 
             GameManager.Instance.addCattleMoney(_MoneyAmount);
             GameManager.Instance.fillStorage(_storageAmount);
 
-            coin = Instantiate(ParticleCoin, new Vector3(unit.transform.position.x, unit.transform.position.y+1, unit.transform.position.z),Quaternion.Euler(-90, -90, 0));
+            coin = Instantiate(ParticleCoin, new Vector3(unit.transform.position.x, unit.transform.position.y+1, unit.transform.position.z), Quaternion.Euler(-90, -90, 0));
            
-
-            if (tempCarbon >= _timeMaxCarbon)
-            {
-                GameManager.Instance.addCarbon(_CarbonAmount);
-                
-                gas = Instantiate(ParticleGas, new Vector3(unit.transform.position.x, unit.transform.position.y, unit.transform.position.z), Quaternion.Euler(-90, -90, 0));
-                tempCarbon = 0;
-            }
 
             yield return new WaitForSeconds(1.5f);
             Destroy(coin);
+
+        }
+
+    }
+
+    IEnumerator CarbonDamage(float _timeMaxCarbon, float _CarbonAmount)
+    {
+
+        while (true)
+        {
+            GameObject gas = null;
+            yield return new WaitForSeconds(_timeMaxCarbon);
+            GameManager.Instance.addCarbon(_CarbonAmount);
+            gas = Instantiate(ParticleGas, gasPoint.position, vaca.transform.localRotation);
+
+
+            yield return new WaitForSeconds(1.5f);
+
+
             Destroy(gas);
-            tempCarbon++;
-            //Debug.Log(tempCarbon);
+
         }
 
     }

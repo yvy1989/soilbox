@@ -9,7 +9,12 @@ ModelImporter:
   - first:
       74: 2812877161334408885
     second: cattle_rig|cattle_walk
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cattle-mat
+    second: {fileID: 2100000, guid: dab32e57e18b6fb4296d2acf43b3a4e8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -3,17 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - soil
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - solo
+  - 
   - Water
   - UI
-  - clicavel
-  - unit
+  - 
+  - 
   - 
   - 
   - 
